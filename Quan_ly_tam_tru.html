@@ -1,0 +1,203 @@
+<style>
+    .collaborator-section { display: flex; flex-direction: column; }
+    .collaborator-header { background-color: #d9d9d9; width: 100%; max-width: 554px; color: #1b0505; padding: 17px 30px; font: 500 40px Inter, sans-serif; }
+    .notification-container { background-color: #fff; display: flex; margin-top: 131px; width: 100%; padding-bottom: 41px; flex-direction: column; overflow: hidden; }
+    .top-bar { background-color: #0e8393; display: flex; width: 100%; align-items: start; gap: 40px 100px; flex-wrap: wrap; padding: 0 5px 7px 41px; }
+    .main-content { margin-top: 9px; flex-grow: 1; flex-basis: auto; }
+    .content-wrapper { gap: 20px; display: flex; }
+    .left-column { display: flex; flex-direction: column; line-height: normal; width: 82%; margin-left: 0; }
+    .title-container { display: flex; width: 100%; flex-direction: column; font-family: Inter, sans-serif; color: #fff; font-weight: 500; }
+    .title-wrapper { align-self: start; display: flex; gap: 36px; font-size: 48px; flex-wrap: wrap; }
+    .icon { aspect-ratio: 1; object-fit: contain; object-position: center; width: 85px; }
+    .main-title { flex-basis: auto; flex-grow: 1; margin: auto 0; }
+    .button-container { display: flex; margin-top: 12px; gap: 40px 72px; font-size: 24px; flex-wrap: wrap; }
+    .manage-btn { background-color: #141010; flex-grow: 1; width: fit-content; padding: 10px 24px; border: 1px solid #000; }
+    .view-info-btn { flex-grow: 1; width: 129px; margin: auto 0; border: 1px solid #000; }
+    .right-column { display: flex; flex-direction: column; line-height: normal; width: 18%; margin-left: 20px; }
+    .view-more-btn { color: #fff; margin-top: 107px; font: 500 24px Inter, sans-serif; border: 1px solid #000; }
+    .collaborator-info { display: flex; color: #fff; font: 500 32px Inter, sans-serif; }
+    .collaborator-icon { aspect-ratio: 0.92; object-fit: contain; object-position: center; width: 88px; }
+    .collaborator-text { margin-top: 13px; }
+    .notification-box { background-color: #f9ecec; box-shadow: 5px 4px 4px rgba(0, 0, 0, 0.25); align-self: center; display: flex; margin-top: 27px; width: 100%; max-width: 1381px; flex-direction: column; padding: 36px 29px; }
+    .notification-actions { align-self: end; display: flex; width: 729px; max-width: 100%; gap: 29px; flex-wrap: wrap; font: 24px Inter, sans-serif; }
+    .notify-selected { background-color: #eee6d1; color: #930829; font-weight: 500; flex-grow: 1; width: fit-content; margin: auto 0; padding: 4px 14px; }
+    .search-bar { border-radius: 30px; background-color: #a49d9d; display: flex; align-items: start; gap: 40px 100px; color: #070101; font-weight: 400; flex-grow: 1; flex-basis: auto; padding: 10px 5px 10px 13px; }
+    .search-icon { aspect-ratio: 1.07; object-fit: contain; object-position: center; width: 30px; }
+    .table-container { display: flex; margin-top: 10px; width: 100%; max-width: 1165px; flex-direction: column; }
+    .table-header { border-radius: 10px; background-color: #a4f3ba; display: flex; width: 100%; gap: 20px; color: #000; flex-wrap: wrap; justify-content: space-between; padding: 13px 23px; font: 400 24px Inter, sans-serif; }
+    .header-group { align-self: start; display: flex; gap: 40px 59px; white-space: nowrap; }
+    .checkbox { background-color: #fffcfc; display: flex; width: 24px; height: 24px; margin: auto 0; }
+    .table-body { display: flex; width: 100%; max-width: 1142px; gap: 30px; flex-wrap: wrap; margin: 7px 0 0 23px; }
+    .checkbox-column { display: flex; flex-direction: column; margin: auto 0; }
+    .data-container { border-radius: 10px; background-color: #fff; flex-grow: 1; flex-basis: auto; padding: 1px 80px 1px 33px; }
+    .data-row { gap: 20px; display: flex; }
+    .id-column { display: flex; flex-grow: 1; align-items: center; gap: 20px; color: #000; white-space: nowrap; justify-content: space-between; font: 400 24px Inter, sans-serif; }
+    .id-group { align-self: stretch; display: flex; flex-direction: column; margin: auto 0; }
+    .id-list { display: flex; flex-direction: column; padding: 0 5px; }
+    .separator { aspect-ratio: 0; object-fit: contain; object-position: center; width: 1px; align-self: stretch; }
+    .cccd-column { align-self: stretch; display: flex; flex-direction: column; margin: auto 0; }
+    .name-column { display: flex; flex-grow: 1; gap: 20px; color: #000; justify-content: space-between; font: 400 24px Inter, sans-serif; }
+    .vertical-line { width: 1px; height: 517px; border: 1px solid #000; }
+    .name-list { display: flex; flex-direction: column; align-items: start; margin: auto 0; }
+    .notification-column { display: flex; flex-grow: 1; gap: 20px; color: #089326; justify-content: space-between; font: 500 24px Inter, sans-serif; }
+    .notification-list { display: flex; flex-direction: column; margin: auto 0; }
+    .notification-item { background-color: #cef3ff; padding: 4px 10px; margin-top: 20px; }
+    .pagination { align-self: center; display: flex; width: 280px; max-width: 100%; gap: 9px; color: #000; white-space: nowrap; margin: 47px 0 0 70px; font: 500 20px Inter, sans-serif; }
+    .page-number { background-color: #d9d9d9; width: 30px; height: 30px; padding: 0 10px; }
+    .page-number-active { background-color: #fff; width: 30px; height: 30px; padding: 0 8px; }
+    .ellipsis { background-color: #fff; display: flex; width: 30px; height: 30px; }
+    .next-page { background-color: #fff; align-self: start; width: 30px; height: 30px; padding: 4px 10px 14px; }
+    .last-page { background-color: #fff; width: 30px; height: 30px; }
+    
+    @media (max-width: 991px) {
+      .collaborator-header { padding: 0 20px; }
+      .notification-container { max-width: 100%; margin-top: 40px; }
+      .top-bar { max-width: 100%; padding-left: 20px; }
+      .main-content { max-width: 100%; }
+      .content-wrapper { flex-direction: column; align-items: stretch; gap: 0; }
+      .left-column, .right-column { width: 100%; }
+      .title-container { max-width: 100%; margin-top: 40px; }
+      .title-wrapper { font-size: 40px; }
+      .main-title { font-size: 40px; }
+      .button-container { max-width: 100%; }
+      .manage-btn { padding: 0 20px; }
+      .view-more-btn { margin-top: 40px; }
+      .notification-box { max-width: 100%; padding: 0 20px; }
+      .notify-selected { max-width: 100%; padding-right: 20px; }
+      .table-container { max-width: 100%; }
+      .table-header { max-width: 100%; padding: 0 20px; }
+      .header-group, .checkbox-column, .id-group, .id-list { white-space: initial; }
+      .data-container { max-width: 100%; padding: 0 20px; }
+      .id-column, .name-column, .notification-column { margin-top: 40px; }
+      .pagination { margin-top: 40px; white-space: initial; }
+      .page-number, .page-number-active, .next-page, .last-page { white-space: initial; }
+    }
+    </style>
+    
+    <section class="collaborator-section">
+      <header class="collaborator-header">Cộng tác viên</header>
+      <div class="notification-container">
+        <div class="top-bar">
+          <div class="main-content">
+            <div class="content-wrapper">
+              <div class="left-column">
+                <div class="title-container">
+                  <div class="title-wrapper">
+                    <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/fd6034c1ec22bf4e825bc2150b97f104458d3ebd2d2f8df26a83d2350de63d48?placeholderIfAbsent=true&apiKey=5242dec0675c4156bcb854b4ca03c063" alt="Management icon" class="icon">
+                    <h1 class="main-title">Quản lý chung cư</h1>
+                  </div>
+                  <div class="button-container">
+                    <button class="manage-btn">Quản lý thông báo</button>
+                    <button class="view-info-btn">Xem thông tin</button>
+                  </div>
+                </div>
+              </div>
+              <div class="right-column">
+                <button class="view-more-btn">Xem thêm</button>
+              </div>
+            </div>
+          </div>
+          <div class="collaborator-info">
+            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/22b93f94b8eaf6c12ded45a2c84f3b6e9f4dbaf5f9a4e49ac9b9344a2a2e99f1?placeholderIfAbsent=true&apiKey=5242dec0675c4156bcb854b4ca03c063" alt="Collaborator icon" class="collaborator-icon">
+            <p class="collaborator-text">Cộng tác <br> viên</p>
+          </div>
+        </div>
+        <div class="notification-box">
+          <div class="notification-actions">
+            <button class="notify-selected">Thông báo đến các mục đã chọn</button>
+            <div class="search-bar">
+              <label for="search-input" class="visually-hidden">Tìm kiếm</label>
+              <input id="search-input" type="text" placeholder="Tìm kiếm...">
+              <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/97f12539253725a7ab85002fc4c70648bebdc2e3c49d5ef2bbf6cf0ce88cec50?placeholderIfAbsent=true&apiKey=5242dec0675c4156bcb854b4ca03c063" alt="Search icon" class="search-icon">
+            </div>
+          </div>
+          <div class="table-container">
+            <div class="table-header">
+              <div class="header-group">
+                <div class="checkbox" role="checkbox" tabindex="0" aria-label="Select all"></div>
+                <span>STT</span>
+                <span>CCCD</span>
+              </div>
+              <span>Họ tên</span>
+            </div>
+            <div class="table-body">
+              <div class="checkbox-column" aria-hidden="true">
+                <!-- Checkboxes removed for brevity -->
+              </div>
+              <div class="data-container">
+                <div class="data-row">
+                  <div class="id-column">
+                    <div class="id-group">
+                      <div class="id-list">
+                        <span>1</span>
+                        <span>2</span>
+                        <span>3</span>
+                        <span>4</span>
+                        <span>5</span>
+                        <span>6</span>
+                        <span>7</span>
+                        <span>8</span>
+                        <span>9</span>
+                        <span>10</span>
+                      </div>
+                    </div>
+                    <span class="separator" aria-hidden="true"></span>
+                    <div class="cccd-column">
+                      <span>435353535</span>
+                      <span>643343435</span>
+                      <span>353556466</span>
+                      <span>344353455</span>
+                      <span>535354545</span>
+                      <span>544564666</span>
+                      <span>908024242</span>
+                      <span>224435355</span>
+                      <span>353552222</span>
+                      <span>980766454</span>
+                    </div>
+                  </div>
+                  <div class="name-column">
+                    <span class="vertical-line" aria-hidden="true"></span>
+                    <div class="name-list">
+                      <span>Nguyễn Văn Phát</span>
+                      <span>Nguyễn Hoàng</span>
+                      <span>Định Thế Công</span>
+                      <span>Lê Hùng</span>
+                      <span>Châu Yến</span>
+                      <span>Mai Thị Hoa</span>
+                      <span>Đinh Tiên Hoàng</span>
+                      <span>Trần Thị Thoại</span>
+                      <span>Hồ Văn Đại</span>
+                      <span>Nguyễn Thanh Phúc</span>
+                    </div>
+                  </div>
+                  <div class="notification-column">
+                    <span class="separator" aria-hidden="true"></span>
+                    <div class="notification-list">
+                      <button class="notification-item">Thông báo</button>
+                      <button class="notification-item">Thông báo</button>
+                      <button class="notification-item">Thông báo</button>
+                      <button class="notification-item">Thông báo</button>
+                      <button class="notification-item">Thông báo</button>
+                      <button class="notification-item">Thông báo</button>
+                      <button class="notification-item">Thông báo</button>
+                      <button class="notification-item">Thông báo</button>
+                      <button class="notification-item">Thông báo</button>
+                      <button class="notification-item">Thông báo</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <nav class="pagination" aria-label="Pagination">
+            <button class="page-number" aria-current="page">1</button>
+            <button class="page-number-active">2</button>
+            <button class="page-number">3</button>
+            <span class="ellipsis" aria-hidden="true"></span>
+            <button class="page-number">99</button>
+            <button class="next-page" aria-label="Next page">&gt;</button>
+            <button class="last-page" aria-label="Last page">&gt;&gt;</button>
+          </nav>
+        </div>
+      </div>
+    </section>

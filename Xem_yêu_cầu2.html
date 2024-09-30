@@ -1,0 +1,544 @@
+<style>
+    .apartment-management {
+      background-color: #fff;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+    
+    .header {
+      background-color: rgba(217, 217, 217, 0.5);
+      width: 100%;
+      padding-bottom: 10px;
+    }
+    
+    .nav-container {
+      background-color: #0e8191;
+      width: 100%;
+      padding: 0 10px 9px 41px;
+    }
+    
+    .nav-content {
+      display: flex;
+      gap: 20px;
+    }
+    
+    .main-nav {
+      display: flex;
+      margin-top: 9px;
+      width: 100%;
+      flex-direction: column;
+      font-family: Inter, sans-serif;
+      font-weight: 500;
+    }
+    
+    .logo-title {
+      align-self: start;
+      display: flex;
+      gap: 24px;
+      font-size: 48px;
+      color: #efefef;
+      flex-wrap: wrap;
+    }
+    
+    .logo {
+      aspect-ratio: 1;
+      object-fit: contain;
+      object-position: center;
+      width: 85px;
+    }
+    
+    .title {
+      text-shadow: 5px 5px 40px rgba(0, 0, 0, 0.25);
+      align-self: end;
+      margin-top: 21px;
+      flex-basis: auto;
+      flex-grow: 1;
+      border: 4px solid #640707;
+    }
+    
+    .nav-links {
+      display: flex;
+      width: 100%;
+      max-width: 1068px;
+      align-items: center;
+      gap: 40px 47px;
+      font-size: 24px;
+      color: #fff;
+      margin: 10px 0 0 30px;
+    }
+    
+    .nav-link {
+      align-self: stretch;
+      flex-grow: 1;
+      margin: auto 0;
+      border: 1px solid #000;
+    }
+    
+    .active-link {
+      background-color: #141010;
+      align-self: stretch;
+      padding: 10px 40px;
+      border: 1px solid #000;
+    }
+    
+    .user-info {
+      display: flex;
+      width: 100%;
+      flex-direction: column;
+      font-family: Inter, sans-serif;
+      color: #fff;
+      font-weight: 500;
+    }
+    
+    .user-details {
+      display: flex;
+      gap: 12px;
+      font-size: 32px;
+    }
+    
+    .user-avatar {
+      aspect-ratio: 0.92;
+      object-fit: contain;
+      object-position: center;
+      width: 88px;
+    }
+    
+    .view-more {
+      font-size: 24px;
+      align-self: start;
+      margin: 18px 0 0 18px;
+      border: 1px solid #000;
+    }
+    
+    .main-content {
+      background-color: #f9ecec;
+      box-shadow: 5px 4px 4px rgba(0, 0, 0, 0.25);
+      display: flex;
+      width: 100%;
+      max-width: 1381px;
+      flex-direction: column;
+      margin: 20px 0 0 17px;
+      padding: 35px 23px;
+    }
+    
+    .action-bar {
+      align-self: end;
+      display: flex;
+      width: 100%;
+      max-width: 1253px;
+      align-items: start;
+      gap: 40px 100px;
+      flex-wrap: wrap;
+      font: 24px Inter, sans-serif;
+    }
+    
+    .new-household {
+      background-color: #930e6e;
+      display: flex;
+      align-items: start;
+      gap: 38px;
+      color: #0b0101;
+      font-weight: 500;
+      flex: 1;
+      padding: 1px 15px 11px;
+      border: 1px solid #000;
+    }
+    
+    .search-bar {
+      border-radius: 30px;
+      background-color: #a49d9d;
+      display: flex;
+      margin-top: 7px;
+      align-items: start;
+      gap: 40px 100px;
+      color: #070101;
+      font-weight: 400;
+      flex: 1;
+      padding: 10px 5px 10px 13px;
+    }
+    
+    .search-icon {
+      aspect-ratio: 1.07;
+      object-fit: contain;
+      object-position: center;
+      width: 30px;
+    }
+    
+    .data-grid {
+      width: 100%;
+      max-width: 1253px;
+    }
+    
+    .grid-header {
+      border-radius: 10px;
+      background-color: #a4f3ba;
+      display: flex;
+      gap: 40px 82px;
+      color: #000;
+      flex-wrap: wrap;
+      padding: 14px 33px;
+    }
+    
+    .grid-row {
+      border-radius: 10px;
+      background-color: #fff;
+      display: flex;
+      margin-top: 7px;
+      width: 100%;
+      gap: 40px 75px;
+      flex-wrap: wrap;
+      padding: 1px 62px;
+    }
+    
+    .column {
+      display: flex;
+      flex-direction: column;
+      color: #000;
+      white-space: nowrap;
+      margin: auto 0;
+    }
+    
+    .divider {
+      width: 1px;
+      height: 230px;
+      border: 1px solid #000;
+    }
+    
+    .action-buttons {
+      align-self: start;
+      display: flex;
+      margin-top: 13px;
+      flex-direction: column;
+      font-weight: 500;
+      white-space: nowrap;
+    }
+    
+    .btn {
+      padding: 4px 10px;
+    }
+    
+    .btn-approve {
+      background-color: #cef3ff;
+      color: #089326;
+    }
+    
+    .btn-cancel {
+      background-color: #eee6d1;
+      color: #930829;
+    }
+    
+    .details-panel {
+      border-radius: 20px 20px 0 0;
+      background-color: #fff;
+      display: flex;
+      width: 100%;
+      padding-bottom: 88px;
+      flex-direction: column;
+      font-family: Inter, sans-serif;
+      color: #000;
+      margin: 0 auto;
+    }
+    
+    .panel-header {
+      border-radius: 20px 20px 0 0;
+      background-color: #a4f3ba;
+      z-index: 10;
+      display: flex;
+      gap: 20px;
+      font-size: 32px;
+      font-weight: 500;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      padding: 7px 19px 17px 2px;
+    }
+    
+    .close-icon {
+      aspect-ratio: 1.26;
+      object-fit: contain;
+      object-position: center;
+      width: 34px;
+      align-self: start;
+      margin-top: 7px;
+    }
+    
+    .panel-content {
+      display: flex;
+      width: 390px;
+      max-width: 100%;
+      flex-direction: column;
+      align-items: start;
+      font-size: 24px;
+      margin: 142px 0 0 31px;
+    }
+    
+    .view-details-link {
+      transform: rotate(-0.002487047362109491rad);
+      background-color: #d9d9d9;
+      align-self: stretch;
+      color: #121087;
+      font-weight: 700;
+      padding: 7px 14px;
+    }
+    
+    .detail-row {
+      display: flex;
+      margin-top: 38px;
+      gap: 26px;
+    }
+    
+    .detail-label {
+      font-weight: 700;
+    }
+    
+    .detail-value {
+      font-weight: 500;
+      flex-basis: auto;
+    }
+    
+    .pagination {
+      align-self: center;
+      display: flex;
+      width: 280px;
+      max-width: 100%;
+      gap: 9px;
+      color: #000;
+      white-space: nowrap;
+      margin: 211px 0 0 14px;
+      font: 500 20px Inter, sans-serif;
+    }
+    
+    .page-number {
+      width: 30px;
+      height: 30px;
+      padding: 0 10px;
+    }
+    
+    .active-page {
+      background-color: #d9d9d9;
+    }
+    
+    .page-ellipsis {
+      background-color: #fff;
+      width: 30px;
+      height: 30px;
+      padding: 0 7px;
+    }
+    
+    .page-nav {
+      background-color: #fff;
+      width: 30px;
+      height: 30px;
+    }
+    
+    @media (max-width: 991px) {
+      .nav-container {
+        max-width: 100%;
+        padding-left: 20px;
+      }
+    
+      .nav-content {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+      }
+    
+      .main-nav {
+        max-width: 100%;
+        margin-top: 40px;
+      }
+    
+      .title {
+        max-width: 100%;
+        font-size: 40px;
+      }
+    
+      .nav-links {
+        max-width: 100%;
+      }
+    
+      .active-link {
+        padding: 0 20px;
+      }
+    
+      .user-info {
+        margin-top: 40px;
+      }
+    
+      .view-more {
+        margin-left: 10px;
+      }
+    
+      .main-content {
+        max-width: 100%;
+        padding: 0 20px;
+      }
+    
+      .action-bar {
+        max-width: 100%;
+      }
+    
+      .data-grid {
+        max-width: 100%;
+        padding-right: 20px;
+      }
+    
+      .grid-header {
+        max-width: 100%;
+        padding: 0 20px;
+      }
+    
+      .column {
+        display: none;
+        white-space: initial;
+      }
+    
+      .action-buttons {
+        white-space: initial;
+      }
+    
+      .details-panel {
+        max-width: 100%;
+      }
+    
+      .panel-header {
+        max-width: 100%;
+      }
+    
+      .panel-content {
+        margin: 40px 0 0 10px;
+      }
+    
+      .detail-row {
+        margin-left: 9px;
+      }
+    
+      .pagination {
+        margin-top: 40px;
+        white-space: initial;
+      }
+    }
+    </style>
+    
+    <section class="apartment-management">
+      <header class="header">
+        <nav class="nav-container">
+          <div class="nav-content">
+            <div class="main-nav">
+              <div class="logo-title">
+                <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/fd6034c1ec22bf4e825bc2150b97f104458d3ebd2d2f8df26a83d2350de63d48?placeholderIfAbsent=true&apiKey=5242dec0675c4156bcb854b4ca03c063" alt="Apartment Management Logo" class="logo" />
+                <h1 class="title">QUẢN LÝ CHUNG CƯ</h1>
+              </div>
+              <div class="nav-links">
+                <a href="#" class="nav-link">Quản lý giấy khai sinh</a>
+                <a href="#" class="nav-link">Quản lý tạm trú</a>
+                <a href="#" class="active-link">Quản lý hộ khẩu</a>
+                <a href="#" class="nav-link">Xem thông tin</a>
+              </div>
+            </div>
+            <div class="user-info">
+              <div class="user-details">
+                <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/e5ecf7cf95d5af0d00f2864b2b6548f43076d77bddefefc4eb96393079216a34?placeholderIfAbsent=true&apiKey=5242dec0675c4156bcb854b4ca03c063" alt="User Avatar" class="user-avatar" />
+                <span>Cán bộ quản lý</span>
+              </div>
+              <a href="#" class="view-more">Xem thêm</a>
+            </div>
+          </div>
+        </nav>
+      </header>
+    
+      <main class="main-content">
+        <div class="action-bar">
+          <button class="new-household">
+            Cấp mới hộ khẩu
+            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/6ab3daf2ea405fb4af4ffd0cef01e46b11d59564a1ab5ad332b00de9bd5488a0?placeholderIfAbsent=true&apiKey=5242dec0675c4156bcb854b4ca03c063" alt="" class="search-icon" />
+          </button>
+          <form class="search-bar">
+            <label for="search-input" class="visually-hidden">Tìm kiếm</label>
+            <input type="text" id="search-input" placeholder="Tìm kiếm..." />
+            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/97f12539253725a7ab85002fc4c70648bebdc2e3c49d5ef2bbf6cf0ce88cec50?placeholderIfAbsent=true&apiKey=5242dec0675c4156bcb854b4ca03c063" alt="Search" class="search-icon" />
+          </form>
+        </div>
+    
+        <div class="data-grid">
+          <div class="grid-header">
+            <span>STT</span>
+            <span class="household-code">Mã hộ khẩu</span>
+          </div>
+          <div class="grid-row">
+            <div class="column">
+              <span>1</span>
+              <span>2</span>
+              <span>3</span>
+              <span>4</span>
+            </div>
+            <div class="column">
+              <span>0012023278</span>
+              <span>8777374773</span>
+              <span>0102000030</span>
+              <span>0102055030</span>
+            </div>
+            <div class="divider"></div>
+            <div>
+              <div>
+                <span>13:00 02/02/2022</span>
+                <a href="#" class="view-request">Xem yêu cầu ...</a>
+              </div>
+              <div>
+                <span>15:00 02/02/2022</span>
+                <a href="#" class="view-request">Xem yêu cầu ...</a>
+              </div>
+              <div>
+                <span>19:00 02/02/2022</span>
+                <a href="#" class="view-request">Xem yêu cầu ...</a>
+              </div>
+            </div>
+            <div class="action-buttons">
+              <div>
+                <button class="btn btn-approve">Duyệt</button>
+                <button class="btn btn-cancel">Hủy</button>
+              </div>
+              <div>
+                <button class="btn btn-approve">Duyệt</button>
+                <button class="btn btn-cancel">Hủy</button>
+              </div>
+              <div>
+                <button class="btn btn-approve">Duyệt</button>
+                <button class="btn btn-cancel">Hủy</button>
+              </div>
+              <div>
+                <button class="btn btn-approve">Duyệt</button>
+                <button class="btn btn-cancel">Hủy</button>
+              </div>
+            </div>
+          </div>
+        </div>
+    
+        <aside class="details-panel">
+          <div class="panel-header">
+            <h2>Xem yêu cầu</h2>
+            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/76ec17b4fef3b405e2765b242e0dd0ea5e96b79040861cde933480c390faf688?placeholderIfAbsent=true&apiKey=5242dec0675c4156bcb854b4ca03c063" alt="Close" class="close-icon" />
+          <div class="panel-content">
+            <a href="#" class="view-details-link">Xem thông tin về nhân khẩu &gt;&gt;</a>
+            <div class="detail-row">
+              <span class="detail-label">Lý do:</span>
+              <span class="detail-value">Sổ bị mục rách</span>
+            </div>
+            <div class="detail-row">
+              <span class="detail-label">Ghi chú:</span>
+              <span class="detail-value">Không có</span>
+            </div>
+          </div>
+        </aside>
+    
+        <nav class="pagination" aria-label="Pagination">
+          <a href="#" class="page-number active-page" aria-current="page">1</a>
+          <a href="#" class="page-number">2</a>
+          <a href="#" class="page-number">3</a>
+          <span class="page-ellipsis">...</span>
+          <a href="#" class="page-number">99</a>
+          <a href="#" class="page-nav" aria-label="Next page">&gt;</a>
+          <a href="#" class="page-nav" aria-label="Last page">&gt;&gt;</a>
+        </nav>
+      </main>
+    </section>

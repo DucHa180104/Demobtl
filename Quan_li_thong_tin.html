@@ -1,0 +1,133 @@
+<style>
+    .user-info-section { display: flex; flex-direction: column; font-family: Inter, sans-serif; }
+    .section-title { background-color: #d9d9d9; width: 100%; max-width: 554px; font-size: 40px; color: #1b0505; font-weight: 500; padding: 17px 30px; }
+    .management-container { background-color: #fff; display: flex; margin-top: 190px; width: 100%; flex-direction: column; overflow: hidden; padding: 3px 2px 20px; }
+    .header { background-color: #0e8393; display: flex; width: 100%; flex-direction: column; font-weight: 500; padding: 0 39px 10px; }
+    .header-content { z-index: 10; display: flex; width: 100%; gap: 20px; flex-wrap: wrap; justify-content: space-between; }
+    .title-wrapper { align-self: flex-start; display: flex; margin-top: 9px; gap: 24px; font-size: 48px; color: #efefef; flex-wrap: wrap; }
+    .header-icon { aspect-ratio: 1; object-fit: contain; object-position: center; width: 85px; }
+    .main-title { text-shadow: 5px 5px 40px rgba(0, 0, 0, 0.25); align-self: flex-end; margin-top: 21px; flex-basis: auto; flex-grow: 1; border: 4px solid #640707; }
+    .sub-title-wrapper { display: flex; gap: 5px; font-size: 32px; color: #fff; }
+    .sub-title-icon { aspect-ratio: 0.92; object-fit: contain; object-position: center; width: 88px; }
+    .sub-title { align-self: flex-start; margin-top: 14px; }
+    .nav-container { display: flex; margin-top: 10px; width: 100%; max-width: 1062px; align-items: center; gap: 20px; font-size: 24px; color: #fff; flex-wrap: wrap; justify-content: space-between; }
+    .nav-item { background-color: #141010; align-self: stretch; padding: 10px 24px; border: 1px solid #000; }
+    .nav-group { align-self: stretch; display: flex; gap: 8px; margin: auto 0; }
+    .nav-icon { aspect-ratio: 1.59; object-fit: contain; object-position: center; width: 35px; align-self: flex-start; margin-top: 7px; }
+    .nav-actions { align-self: stretch; display: flex; gap: 40px 100px; margin: auto 0; }
+    .user-details { background-color: #f9ecec; box-shadow: 5px 4px 4px rgba(0, 0, 0, 0.25); display: flex; margin-top: 17px; width: 100%; max-width: 1394px; flex-direction: column; align-items: center; font-size: 24px; color: #000; padding: 75px 80px 43px; }
+    .details-container { display: flex; width: 100%; max-width: 1093px; flex-direction: column; }
+    .detail-row { display: flex; width: 100%; max-width: 595px; gap: 40px 85px; flex-wrap: wrap; }
+    .detail-label { font-weight: 600; align-self: flex-start; flex-grow: 1; }
+    .detail-value { background-color: #eae5e5; font-weight: 400; flex-grow: 1; width: fit-content; padding: 10px 30px; }
+    .multi-detail-row { display: flex; margin-top: 19px; width: 100%; max-width: 1008px; align-items: flex-start; gap: 40px 68px; font-weight: 600; flex-wrap: wrap; }
+    .date-picker { background-color: #eae5e5; align-self: flex-start; display: flex; margin-top: 5px; align-items: flex-start; gap: 40px 78px; font-weight: 400; padding: 6px 22px; }
+    .date-picker-icon { aspect-ratio: 1.17; object-fit: contain; object-position: center; width: 35px; }
+    .gender-select { background-color: #eae5e5; align-self: flex-start; display: flex; width: 147px; height: 46px; }
+    .action-buttons { align-self: flex-end; display: flex; margin-top: 21px; width: 373px; max-width: 100%; gap: 20px; color: #fff; font-weight: 600; justify-content: space-between; }
+    .action-button { background-color: #e73a3a; padding: 16px 25px; }
+    
+    @media (max-width: 991px) {
+      .section-title { padding: 0 20px; }
+      .management-container { max-width: 100%; margin-top: 40px; }
+      .header { max-width: 100%; padding: 0 20px; }
+      .header-content { max-width: 100%; }
+      .main-title { font-size: 40px; }
+      .nav-container { max-width: 100%; }
+      .user-details { max-width: 100%; padding: 0 20px; }
+      .details-container { max-width: 100%; }
+      .detail-value, .date-picker { padding: 0 20px; }
+      .multi-detail-row, .detail-row { max-width: 100%; }
+      .action-buttons { max-width: 100%; }
+      .action-button { padding: 16px 20px; }
+    }
+    </style>
+    
+    <section class="user-info-section">
+      <h1 class="section-title">Người dân</h1>
+      <div class="management-container">
+        <header class="header">
+          <div class="header-content">
+            <div class="title-wrapper">
+              <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/fd6034c1ec22bf4e825bc2150b97f104458d3ebd2d2f8df26a83d2350de63d48?placeholderIfAbsent=true&apiKey=5242dec0675c4156bcb854b4ca03c063" alt="" class="header-icon" />
+              <h2 class="main-title">Quản lý chung cư</h2>
+            </div>
+            <div class="sub-title-wrapper">
+              <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/22b93f94b8eaf6c12ded45a2c84f3b6e9f4dbaf5f9a4e49ac9b9344a2a2e99f1?placeholderIfAbsent=true&apiKey=5242dec0675c4156bcb854b4ca03c063" alt="" class="sub-title-icon" />
+              <p class="sub-title">Nhân<br />khẩu</p>
+            </div>
+          </div>
+          <nav class="nav-container">
+            <a href="#" class="nav-item">Quản lý thông tin</a>
+            <div class="nav-group">
+              <a href="#" class="nav-item">Quản lý giấy tờ</a>
+              <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/eeccde328bd2281ec37fd3846ba68854d9555fc441c77e7b44a122f17b695602?placeholderIfAbsent=true&apiKey=5242dec0675c4156bcb854b4ca03c063" alt="" class="nav-icon" />
+            </div>
+            <div class="nav-actions">
+              <a href="#" class="nav-item">Xem thông tin</a>
+              <a href="#" class="nav-item">Xem thêm</a>
+            </div>
+          </nav>
+        </header>
+        <main class="user-details">
+          <div class="details-container">
+            <div class="detail-row">
+              <label for="fullName" class="detail-label">Họ và tên :</label>
+              <p id="fullName" class="detail-value">Nguyễn Văn A</p>
+            </div>
+            <div class="multi-detail-row">
+              <label for="birthDate" class="detail-label">Ngày, tháng, năm sinh:</label>
+              <div class="date-picker">
+                <span id="birthDate">03/12/1977</span>
+                <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/a76003baa6ec1de88ed61e478b2e1ee2c69e520584b8034d77f4334755a2fa90?placeholderIfAbsent=true&apiKey=5242dec0675c4156bcb854b4ca03c063" alt="Calendar icon" class="date-picker-icon" />
+              </div>
+              <label for="gender" class="detail-label">Giới tính :</label>
+              <select id="gender" class="gender-select">
+                <option value="male">Nam</option>
+                <option value="female">Nữ</option>
+              </select>
+            </div>
+            <div class="detail-row">
+              <label for="idNumber" class="detail-label">Số định danh cá nhân / CCCD :</label>
+              <p id="idNumber" class="detail-value">001200223278</p>
+            </div>
+            <div class="detail-row">
+              <label for="phoneNumber" class="detail-label">Số điện thoại liên hệ :</label>
+              <p id="phoneNumber" class="detail-value">0366181683</p>
+            </div>
+            <div class="detail-row">
+              <label for="hometown" class="detail-label">Quê quán :</label>
+              <p id="hometown" class="detail-value">Yên Nghĩa, Hà Đông, Hà Nội</p>
+            </div>
+            <div class="multi-detail-row">
+              <label for="ethnicity" class="detail-label">Dân tộc :</label>
+              <p id="ethnicity" class="detail-value">Kinh</p>
+              <label for="religion" class="detail-label">Tôn giáo :</label>
+              <p id="religion" class="detail-value">không</p>
+              <label for="nationality" class="detail-label">Quốc tịch :</label>
+              <p id="nationality" class="detail-value">Việt Nam</p>
+            </div>
+            <div class="detail-row">
+              <label for="permanentAddress" class="detail-label">Nơi thường trú :</label>
+              <p id="permanentAddress" class="detail-value">Yên Nghĩa, Hà Đông, Hà Nội</p>
+            </div>
+            <div class="detail-row">
+              <label for="temporaryAddress" class="detail-label">Nơi tạm trú :</label>
+              <p id="temporaryAddress" class="detail-value">Yên Nghĩa, Hà Đông, Hà Nội</p>
+            </div>
+            <div class="detail-row">
+              <label for="currentAddress" class="detail-label">Nơi ở hiện tại :</label>
+              <p id="currentAddress" class="detail-value">Yên Nghĩa, Hà Đông, Hà Nội</p>
+            </div>
+            <div class="detail-row">
+              <label for="occupation" class="detail-label">Nghề nghiệp :</label>
+              <p id="occupation" class="detail-value">Giáo viên</p>
+            </div>
+            <div class="action-buttons">
+              <button class="action-button">Cập nhập</button>
+              <button class="action-button">Báo cáo</button>
+            </div>
+          </div>
+        </main>
+      </div>
+    </section>

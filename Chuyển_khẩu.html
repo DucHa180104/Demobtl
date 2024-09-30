@@ -1,0 +1,454 @@
+<style>
+    .household-registration {
+      background-color: #fff;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      padding-bottom: 11px;
+    }
+    
+    .header {
+      background-color: #0e8191;
+      padding: 9px 10px 9px 41px;
+      width: 100%;
+    }
+    
+    .header-content {
+      display: flex;
+      gap: 20px;
+    }
+    
+    .main-info {
+      display: flex;
+      flex-direction: column;
+      font-family: Inter, sans-serif;
+      font-weight: 500;
+      margin-top: 9px;
+      width: 83%;
+    }
+    
+    .title-wrapper {
+      align-self: flex-start;
+      display: flex;
+      font-size: 48px;
+      color: #efefef;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+    
+    .logo {
+      aspect-ratio: 1;
+      object-fit: contain;
+      object-position: center;
+      width: 85px;
+    }
+    
+    .main-title {
+      align-self: flex-end;
+      border: 4px solid #640707;
+      flex-grow: 1;
+      margin-top: 21px;
+      text-shadow: 5px 5px 40px rgba(0, 0, 0, 0.25);
+    }
+    
+    .nav-menu {
+      display: flex;
+      width: 100%;
+      max-width: 1068px;
+      align-items: center;
+      gap: 40px 47px;
+      font-size: 24px;
+      color: #fff;
+      margin: 10px 0 0 30px;
+    }
+    
+    .nav-item {
+      align-self: stretch;
+      flex-grow: 1;
+      border: 1px solid #000;
+    }
+    
+    .nav-item-active {
+      background-color: #141010;
+      padding: 10px 40px;
+    }
+    
+    .user-info {
+      display: flex;
+      flex-direction: column;
+      font-family: Inter, sans-serif;
+      color: #fff;
+      font-weight: 500;
+      width: 17%;
+    }
+    
+    .user-details {
+      display: flex;
+      gap: 12px;
+      font-size: 32px;
+    }
+    
+    .user-avatar {
+      aspect-ratio: 0.92;
+      object-fit: contain;
+      object-position: center;
+      width: 88px;
+    }
+    
+    .view-more {
+      font-size: 24px;
+      align-self: flex-start;
+      margin: 18px 0 0 18px;
+      border: 1px solid #000;
+    }
+    
+    .main-content {
+      background-color: #f9ecec;
+      box-shadow: 5px 4px 4px rgba(0, 0, 0, 0.25);
+      align-self: center;
+      display: flex;
+      margin-top: 19px;
+      width: 100%;
+      max-width: 1381px;
+      flex-direction: column;
+      padding: 42px 43px 27px 16px;
+    }
+    
+    .content-header {
+      align-self: flex-end;
+      display: flex;
+      width: 100%;
+      max-width: 1253px;
+      align-items: flex-start;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      font: 24px Inter, sans-serif;
+    }
+    
+    .section-title {
+      background-color: #930e6e;
+      display: flex;
+      align-items: flex-start;
+      gap: 13px;
+      color: #0b0101;
+      font-weight: 500;
+      padding: 2px 16px 11px;
+      border: 1px solid #000;
+    }
+    
+    .section-icon {
+      aspect-ratio: 0.55;
+      object-fit: contain;
+      object-position: center;
+      width: 22px;
+      border-radius: 50%;
+    }
+    
+    .search-bar {
+      border-radius: 30px;
+      background-color: #a49d9d;
+      display: flex;
+      margin-top: 7px;
+      align-items: flex-start;
+      gap: 40px 100px;
+      color: #070101;
+      font-weight: 400;
+      padding: 10px 5px 10px 13px;
+    }
+    
+    .search-icon {
+      aspect-ratio: 1.07;
+      object-fit: contain;
+      object-position: center;
+      width: 30px;
+    }
+    
+    .data-table {
+      display: flex;
+      margin-top: 17px;
+      width: 100%;
+      max-width: 1260px;
+      flex-direction: column;
+    }
+    
+    .table-header {
+      border-radius: 10px;
+      background-color: #a4f3ba;
+      display: flex;
+      gap: 40px 82px;
+      color: #000;
+      padding: 14px 33px;
+      font: 400 24px Inter, sans-serif;
+    }
+    
+    .table-body {
+      border-radius: 10px;
+      background-color: #fff;
+      display: flex;
+      margin-top: 7px;
+      width: 100%;
+      align-items: center;
+      gap: 40px 80px;
+      flex-wrap: wrap;
+      padding: 1px 62px;
+    }
+    
+    .table-column {
+      align-self: stretch;
+      display: flex;
+      flex-direction: column;
+      color: #000;
+      margin: auto 0;
+      font: 400 24px Inter, sans-serif;
+    }
+    
+    .table-divider {
+      width: 1px;
+      height: 230px;
+      border: 1px solid #000;
+    }
+    
+    .action-column {
+      align-self: flex-start;
+      display: flex;
+      margin-top: 13px;
+      flex-direction: column;
+    }
+    
+    .action-row {
+      display: flex;
+      gap: 20px;
+    }
+    
+    .view-request {
+      color: #ae0f0f;
+      font: 400 24px Inter, sans-serif;
+    }
+    
+    .action-buttons {
+      display: flex;
+      gap: 20px;
+      justify-content: space-between;
+      font: 500 24px Inter, sans-serif;
+    }
+    
+    .approve-btn {
+      background-color: #cef3ff;
+      color: #089326;
+      padding: 4px 10px;
+    }
+    
+    .cancel-btn {
+      background-color: #eee6d1;
+      color: #930829;
+      padding: 4px 10px;
+    }
+    
+    .pagination {
+      align-self: center;
+      display: flex;
+      margin-top: 363px;
+      width: 280px;
+      max-width: 100%;
+      gap: 9px;
+      color: #000;
+      font: 500 20px Inter, sans-serif;
+    }
+    
+    .page-number {
+      background-color: #fff;
+      width: 30px;
+      height: 30px;
+      padding: 0 8px;
+    }
+    
+    .page-number-active {
+      background-color: #d9d9d9;
+    }
+    
+    @media (max-width: 991px) {
+      .header {
+        max-width: 100%;
+        padding-left: 20px;
+      }
+    
+      .header-content {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+      }
+    
+      .main-info {
+        width: 100%;
+        max-width: 100%;
+        margin-top: 40px;
+      }
+    
+      .title-wrapper {
+        font-size: 40px;
+      }
+    
+      .main-title {
+        font-size: 40px;
+      }
+    
+      .nav-menu {
+        max-width: 100%;
+      }
+    
+      .nav-item-active {
+        padding: 0 20px;
+      }
+    
+      .user-info {
+        width: 100%;
+        margin-top: 40px;
+      }
+    
+      .view-more {
+        margin-left: 10px;
+      }
+    
+      .main-content {
+        max-width: 100%;
+        padding-right: 20px;
+      }
+    
+      .content-header {
+        max-width: 100%;
+      }
+    
+      .table-header {
+        max-width: 100%;
+        padding: 0 20px;
+      }
+    
+      .table-body {
+        max-width: 100%;
+        padding: 0 20px;
+      }
+    
+      .table-column:first-child {
+        display: none;
+      }
+    
+      .action-column {
+        max-width: 100%;
+      }
+    
+      .pagination {
+        margin-top: 40px;
+        white-space: initial;
+      }
+    }
+    </style>
+    
+    <section class="household-registration">
+      <header class="header">
+        <div class="header-content">
+          <div class="main-info">
+            <div class="title-wrapper">
+              <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/fd6034c1ec22bf4e825bc2150b97f104458d3ebd2d2f8df26a83d2350de63d48?placeholderIfAbsent=true&apiKey=5242dec0675c4156bcb854b4ca03c063" alt="Apartment management logo" class="logo">
+              <h1 class="main-title">Quản lý chung cư</h1>
+            </div>
+            <nav class="nav-menu">
+              <a href="#" class="nav-item">Quản lý giấy khai sinh</a>
+              <a href="#" class="nav-item">Quản lý tạm trú</a>
+              <a href="#" class="nav-item nav-item-active">Quản lý hộ khẩu</a>
+              <a href="#" class="nav-item">Xem thông tin</a>
+            </nav>
+          </div>
+          <div class="user-info">
+            <div class="user-details">
+              <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/71d75e0a1b4075f214b659021d7fd4a2f67de47e2ceb3be8724100991087fbc9?placeholderIfAbsent=true&apiKey=5242dec0675c4156bcb854b4ca03c063" alt="User avatar" class="user-avatar">
+              <span>Cán bộ<br>quản lý</span>
+            </div>
+            <a href="#" class="view-more">Xem thêm</a>
+          </div>
+        </div>
+      </header>
+    
+      <main class="main-content">
+        <div class="content-header">
+          <div class="section-title">
+            <h2>Quản lý chuyển khẩu</h2>
+            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/6ab3daf2ea405fb4af4ffd0cef01e46b11d59564a1ab5ad332b00de9bd5488a0?placeholderIfAbsent=true&apiKey=5242dec0675c4156bcb854b4ca03c063" alt="" class="section-icon">
+          </div>
+          <form class="search-bar">
+            <label for="search-input" class="visually-hidden">Tìm kiếm</label>
+            <input type="text" id="search-input" placeholder="Tìm kiếm..." aria-label="Tìm kiếm">
+            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/f615c2e5958e3a7bb71a6b9f098f51408e364148e169b004da24af3c2f001c44?placeholderIfAbsent=true&apiKey=5242dec0675c4156bcb854b4ca03c063" alt="" class="search-icon">
+          </form>
+        </div>
+    
+        <div class="data-table">
+          <div class="table-header">
+            <span>STT</span>
+            <span>Mã hộ khẩu</span>
+            <span>Thời gian đăng kí</span>
+          </div>
+          <div class="table-body">
+            <div class="table-column">
+              <span>1</span>
+              <span>2</span>
+              <span>3</span>
+              <span>4</span>
+            </div>
+            <div class="table-column">
+              <span>0012023278</span>
+              <span>8777374773</span>
+              <span>0102000030</span>
+              <span>0102055030</span>
+            </div>
+            <div class="table-divider"></div>
+            <div class="table-column">
+              <span>13:00 02/02/2022</span>
+              <span>15:00 02/02/2022</span>
+              <span>19:00 02/02/2022</span>
+              <span>19:00 02/02/2022</span>
+            </div>
+            <div class="action-column">
+              <div class="action-row">
+                <div class="table-column">
+                  <a href="#" class="view-request">Xem yêu cầu ...</a>
+                  <a href="#" class="view-request">Xem yêu cầu ...</a>
+                  <a href="#" class="view-request">Xem yêu cầu ...</a>
+                </div>
+                <div class="table-column">
+                  <div class="action-buttons">
+                    <button class="approve-btn">Duyệt</button>
+                    <button class="cancel-btn">Hủy</button>
+                  </div>
+                  <div class="action-buttons">
+                    <button class="approve-btn">Duyệt</button>
+                    <button class="cancel-btn">Hủy</button>
+                  </div>
+                  <div class="action-buttons">
+                    <button class="approve-btn">Duyệt</button>
+                    <button class="cancel-btn">Hủy</button>
+                  </div>
+                </div>
+              </div>
+              <div class="action-row">
+                <a href="#" class="view-request">Xem yêu cầu ...</a>
+                <div class="action-buttons">
+                  <button class="approve-btn">Duyệt</button>
+                  <button class="cancel-btn">Hủy</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    
+        <nav class="pagination" aria-label="Pagination">
+          <span class="page-number page-number-active">1</span>
+          <span class="page-number">2</span>
+          <span class="page-number">3</span>
+          <span class="page-number">...</span>
+          <span class="page-number">99</span>
+          <span class="page-number">&gt;</span>
+          <span class="page-number">&gt;&gt;</span>
+        </nav>
+      </main>
+    </section>

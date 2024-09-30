@@ -1,0 +1,1004 @@
+<style>
+    .birth-certificate-management {
+      background-color: #fff;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+    
+    .header {
+      background-color: rgba(217, 217, 217, 0.5);
+      display: flex;
+      width: 100%;
+      padding-bottom: 20px;
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    @media (max-width: 991px) {
+      .header {
+        max-width: 100%;
+      }
+    }
+    
+    .nav-bar {
+      background-color: #0e8393;
+      align-self: stretch;
+      width: 100%;
+      padding: 0 10px 7px 41px;
+    }
+    
+    @media (max-width: 991px) {
+      .nav-bar {
+        max-width: 100%;
+        padding-left: 20px;
+      }
+    }
+    
+    .nav-content {
+      gap: 20px;
+      display: flex;
+    }
+    
+    @media (max-width: 991px) {
+      .nav-content {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+      }
+    }
+    
+    .nav-left {
+      display: flex;
+      flex-direction: column;
+      line-height: normal;
+      width: 46%;
+      margin-left: 0;
+    }
+    
+    @media (max-width: 991px) {
+      .nav-left {
+        width: 100%;
+      }
+    }
+    
+    .nav-menu {
+      display: flex;
+      margin-top: 9px;
+      width: 100%;
+      flex-direction: column;
+      font-family: Inter, sans-serif;
+      font-weight: 500;
+    }
+    
+    @media (max-width: 991px) {
+      .nav-menu {
+        max-width: 100%;
+        margin-top: 40px;
+      }
+    }
+    
+    .nav-title {
+      align-self: start;
+      display: flex;
+      gap: 24px;
+      font-size: 48px;
+      color: #efefef;
+      flex-wrap: wrap;
+    }
+    
+    @media (max-width: 991px) {
+      .nav-title {
+        font-size: 40px;
+      }
+    }
+    
+    .nav-logo {
+      aspect-ratio: 1;
+      object-fit: contain;
+      object-position: center;
+      width: 85px;
+    }
+    
+    .nav-heading {
+      text-shadow: 5px 5px 40px rgba(0, 0, 0, 0.25);
+      align-self: end;
+      margin-top: 21px;
+      flex-basis: auto;
+      flex-grow: 1;
+      border: 4px solid #640707;
+    }
+    
+    @media (max-width: 991px) {
+      .nav-heading {
+        font-size: 40px;
+      }
+    }
+    
+    .nav-links {
+      display: flex;
+      margin-top: 12px;
+      gap: 40px 67px;
+      font-size: 24px;
+      color: #fff;
+      flex-wrap: wrap;
+    }
+    
+    @media (max-width: 991px) {
+      .nav-links {
+        max-width: 100%;
+      }
+    }
+    
+    .nav-link-active {
+      background-color: #141010;
+      flex-grow: 1;
+      width: fit-content;
+      padding: 10px 24px;
+      border: 1px solid #000;
+    }
+    
+    @media (max-width: 991px) {
+      .nav-link-active {
+        padding: 0 20px;
+      }
+    }
+    
+    .nav-link {
+      flex-grow: 1;
+      width: 141px;
+      margin: auto 0;
+      border: 1px solid #000;
+    }
+    
+    .nav-center {
+      display: flex;
+      flex-direction: column;
+      line-height: normal;
+      width: 16%;
+      margin-left: 20px;
+    }
+    
+    @media (max-width: 991px) {
+      .nav-center {
+        width: 100%;
+      }
+    }
+    
+    .nav-link-secondary {
+      color: #fff;
+      margin-top: 116px;
+      font: 500 24px Inter, sans-serif;
+      border: 1px solid #000;
+    }
+    
+    @media (max-width: 991px) {
+      .nav-link-secondary {
+        margin-top: 40px;
+      }
+    }
+    
+    .nav-right {
+      display: flex;
+      flex-direction: column;
+      line-height: normal;
+      width: 38%;
+      margin-left: 20px;
+    }
+    
+    @media (max-width: 991px) {
+      .nav-right {
+        width: 100%;
+      }
+    }
+    
+    .user-info {
+      display: flex;
+      width: 100%;
+      flex-direction: column;
+      font-family: Inter, sans-serif;
+      color: #fff;
+      font-weight: 500;
+    }
+    
+    @media (max-width: 991px) {
+      .user-info {
+        max-width: 100%;
+        margin-top: 40px;
+      }
+    }
+    
+    .user-profile {
+      align-self: end;
+      display: flex;
+      gap: 12px;
+      font-size: 32px;
+    }
+    
+    .user-avatar {
+      aspect-ratio: 0.92;
+      object-fit: contain;
+      object-position: center;
+      width: 88px;
+    }
+    
+    .user-role {
+      margin: auto 0;
+    }
+    
+    .user-actions {
+      display: flex;
+      margin-top: 18px;
+      width: 367px;
+      max-width: 100%;
+      gap: 20px;
+      font-size: 24px;
+      justify-content: space-between;
+    }
+    
+    .user-action {
+      border: 1px solid #000;
+    }
+    
+    .main-content {
+      display: flex;
+      margin-top: 26px;
+      width: 100%;
+      max-width: 1377px;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      font: 24px Inter, sans-serif;
+    }
+    
+    @media (max-width: 991px) {
+      .main-content {
+        max-width: 100%;
+      }
+    }
+    
+    .section-title {
+      background-color: #930e6e;
+      display: flex;
+      padding-left: 18px;
+      align-items: center;
+      gap: 14px;
+      color: #0b0101;
+      font-weight: 500;
+      border: 1px solid #000;
+    }
+    
+    .title-text {
+      align-self: stretch;
+      flex-grow: 1;
+      margin: auto 0;
+    }
+    
+    .title-icon {
+      aspect-ratio: 0.94;
+      object-fit: contain;
+      object-position: center;
+      width: 83px;
+      align-self: stretch;
+      z-index: 10;
+      margin: auto 0;
+    }
+    
+    @media (max-width: 991px) {
+      .title-icon {
+        margin-right: -13px;
+      }
+    }
+    
+    .search-bar {
+      border-radius: 30px;
+      background-color: #a49d9d;
+      align-self: start;
+      display: flex;
+      margin-top: 4px;
+      gap: 40px 100px;
+      color: #070101;
+      font-weight: 400;
+      flex-wrap: wrap;
+      padding: 10px 12px 10px 31px;
+    }
+    
+    @media (max-width: 991px) {
+      .search-bar {
+        max-width: 100%;
+        padding-left: 20px;
+      }
+    }
+    
+    .search-icon {
+      aspect-ratio: 1.5;
+      object-fit: contain;
+      object-position: center;
+      width: 42px;
+      align-self: start;
+    }
+    
+    .content-wrapper {
+      background-color: #f9ecec;
+      box-shadow: 5px 4px 4px rgba(0, 0, 0, 0.25);
+      display: flex;
+      margin-top: 48px;
+      width: 100%;
+      max-width: 1381px;
+      flex-direction: column;
+      padding: 0 34px 351px;
+    }
+    
+    @media (max-width: 991px) {
+      .content-wrapper {
+        max-width: 100%;
+        margin-top: 40px;
+        padding: 0 20px 100px;
+      }
+    }
+    
+    .content-inner {
+      z-index: 10;
+      margin-top: -73px;
+      width: 100%;
+    }
+    
+    @media (max-width: 991px) {
+      .content-inner {
+        max-width: 100%;
+        padding-right: 20px;
+      }
+    }
+    
+    .content-columns {
+      gap: 20px;
+      display: flex;
+    }
+    
+    @media (max-width: 991px) {
+      .content-columns {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+      }
+    }
+    
+    .left-column {
+      display: flex;
+      flex-direction: column;
+      line-height: normal;
+      width: 68%;
+      margin-left: 0;
+    }
+    
+    @media (max-width: 991px) {
+      .left-column {
+        width: 100%;
+      }
+    }
+    
+    .table-header {
+      border-radius: 10px;
+      background-color: #a4f3ba;
+      display: flex;
+      gap: 40px 100px;
+      color: #000;
+      white-space: nowrap;
+      flex-wrap: wrap;
+      margin: 153px -944px 0 0;
+      padding: 14px 33px;
+      font: 400 24px Inter, sans-serif;
+    }
+    
+    @media (max-width: 991px) {
+      .table-header {
+        max-width: 100%;
+        margin-top: 40px;
+        white-space: initial;
+        padding: 0 20px;
+      }
+    }
+    
+    .header-id {
+      flex-basis: auto;
+    }
+    
+    @media (max-width: 991px) {
+      .header-id {
+        max-width: 100%;
+      }
+    }
+    
+    .right-column {
+      display: flex;
+      flex-direction: column;
+      line-height: normal;
+      width: 32%;
+      margin-left: 20px;
+    }
+    
+    @media (max-width: 991px) {
+      .right-column {
+        width: 100%;
+      }
+    }
+    
+    .request-details {
+      border-radius: 20px 20px 0 0;
+      background-color: #fff;
+      display: flex;
+      flex-grow: 1;
+      padding-bottom: 33px;
+      flex-direction: column;
+      font-family: Inter, sans-serif;
+      color: #000;
+      width: 100%;
+    }
+    
+    @media (max-width: 991px) {
+      .request-details {
+        max-width: 100%;
+      }
+    }
+    
+    .details-header {
+      border-radius: 20px 20px 0 0;
+      background-color: #a4f3ba;
+      z-index: 10;
+      font-size: 32px;
+      font-weight: 500;
+      padding: 14px 22px;
+    }
+    
+    @media (max-width: 991px) {
+      .details-header {
+        max-width: 100%;
+        padding: 0 20px;
+      }
+    }
+    
+    .details-content {
+      display: flex;
+      margin-top: 16px;
+      width: 100%;
+      flex-direction: column;
+      align-items: start;
+      font-size: 24px;
+      padding: 0 80px 0 10px;
+    }
+    
+    @media (max-width: 991px) {
+      .details-content {
+        max-width: 100%;
+        padding-right: 20px;
+      }
+    }
+    
+    .id-info {
+      display: flex;
+      gap: 23px;
+    }
+    
+    @media (max-width: 991px) {
+      .id-info {
+        margin-left: 4px;
+      }
+    }
+    
+    .id-label {
+      font-weight: 700;
+    }
+    
+    .id-value {
+      font-weight: 500;
+      flex-basis: auto;
+    }
+    
+    .personal-info {
+      display: flex;
+      margin-top: 6px;
+      align-items: flex-start;
+      gap: 11px;
+    }
+    
+    .info-column {
+      align-self: start;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      flex-basis: 0;
+      width: fit-content;
+    }
+    
+    .name-info {
+      align-self: start;
+      display: flex;
+      gap: 26px;
+    }
+    
+    .name-label {
+      font-weight: 700;
+      flex-grow: 1;
+    }
+    
+    .name-value {
+      font-weight: 500;
+      flex-basis: auto;
+    }
+    
+    .relation-label {
+      font-weight: 700;
+      margin-top: 15px;
+    }
+    
+    .relation-value {
+      font-weight: 500;
+      align-self: end;
+      margin-top: 46px;
+    }
+    
+    @media (max-width: 991px) {
+      .relation-value {
+        margin-top: 40px;
+      }
+    }
+    
+    .view-details {
+      transform: rotate(-0.0025870505020247378rad);
+      background-color: #d9d9d9;
+      margin-top: 19px;
+      color: #121087;
+      font-weight: 700;
+      padding: 7px 14px;
+    }
+    
+    .birth-info-header {
+      font-weight: 700;
+      margin-top: 20px;
+    }
+    
+    @media (max-width: 991px) {
+      .birth-info-header {
+        margin-left: 9px;
+      }
+    }
+    
+    .birth-date {
+      display: flex;
+      margin-top: 58px;
+      gap: 25px;
+    }
+    
+    @media (max-width: 991px) {
+      .birth-date {
+        margin: 40px 0 0 9px;
+      }
+    }
+    
+    .birth-date-label {
+      font-weight: 600;
+      flex-basis: auto;
+      flex-grow: 1;
+    }
+    
+    .birth-date-value {
+      font-weight: 400;
+      flex-basis: auto;
+    }
+    
+    .birth-details {
+      display: flex;
+      margin-top: 24px;
+      width: 492px;
+      max-width: 100%;
+      gap: 11px;
+      flex-wrap: wrap;
+    }
+    
+    .birth-details-labels {
+      display: flex;
+      flex-direction: column;
+      font-weight: 700;
+    }
+    
+    .birth-place-label {
+    }
+    
+    @media (max-width: 991px) {
+      .birth-place-label {
+        margin-right: 4px;
+      }
+    }
+    
+    .gender-label {
+      margin-top: 8px;
+    }
+    
+    .birth-details-values {
+    align-self: start;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    flex-basis: 0;
+    width: fit-content;
+}
+
+    
+    .birth-place-value {
+      font-weight: 500;
+      align-self: start;
+    }
+    
+    .gender-nationality {
+      align-self: end;
+      display: flex;
+      margin-top: 6px;
+      gap: 28px;
+      font-weight: 400;
+    }
+    
+    .gender-value {
+      align-self: start;
+    }
+    
+    .nationality-label {
+      font-weight: 700;
+      flex-basis: auto;
+    }
+    
+    .nationality-value {
+      flex-basis: auto;
+    }
+    
+    .reason-section {
+      display: flex;
+      gap: 25px;
+      margin: 17px 0 0 12px;
+    }
+    
+    @media (max-width: 991px) {
+      .reason-section {
+        margin-left: 10px;
+      }
+    }
+    
+    .reason-label {
+      font-weight: 700;
+    }
+    
+    .reason-value {
+      font-weight: 500;
+      flex-basis: auto;
+      flex-grow: 1;
+    }
+    
+    .note-section {
+      display: flex;
+      margin-top: 13px;
+      gap: 10px;
+    }
+    
+    @media (max-width: 991px) {
+      .note-section {
+        margin-left: 9px;
+      }
+    }
+    
+    .note-label {
+      font-weight: 700;
+      flex-grow: 1;
+    }
+    
+    .note-value {
+      font-weight: 500;
+      flex-basis: auto;
+    }
+    
+    .request-list {
+      border-radius: 10px;
+      background-color: #fff;
+      display: flex;
+      margin-bottom: -70px;
+      width: 100%;
+      flex-direction: column;
+      padding: 16px 21px 8px 44px;
+      font: 24px Inter, sans-serif;
+    }
+    
+    @media (max-width: 991px) {
+      .request-list {
+        max-width: 100%;
+        margin-bottom: 10px;
+        padding: 0 20px;
+      }
+    }
+    
+    .request-list-header {
+      display: flex;
+      align-items: start;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    
+    @media (max-width: 991px) {
+      .request-list-header {
+        max-width: 100%;
+      }
+    }
+    
+    .request-ids {
+      display: flex;
+      margin-top: 8px;
+      flex-direction: column;
+      color: #000;
+      font-weight: 400;
+      white-space: nowrap;
+    }
+    
+    @media (max-width: 991px) {
+      .request-ids {
+        white-space: initial;
+      }
+    }
+    
+    .request-id-row {
+      display: flex;
+      gap: 20px;
+      justify-content: space-between;
+    }
+    
+    @media (max-width: 991px) {
+      .request-id-row {
+        margin-right: 4px;
+        white-space: initial;
+      }
+    }
+    
+    .request-actions {
+      display: flex;
+      flex-direction: column;
+      font-weight: 500;
+    }
+    
+    .action-row {
+      display: flex;
+      gap: 33px;
+    }
+    
+    .view-request {
+      color: #ae0f0f;
+      font-weight: 400;
+      flex-grow: 1;
+    }
+    
+    .approve-btn {
+      background-color: #cef3ff;
+      color: #089326;
+      white-space: nowrap;
+      padding: 4px 10px;
+    }
+    
+    @media (max-width: 991px) {
+      .approve-btn {
+        white-space: initial;
+      }
+    }
+    
+    .reject-btn {
+      background-color: #eee6d1;
+      color: #930829;
+      white-space: nowrap;
+      padding: 4px 10px;
+    }
+    
+    @media (max-width: 991px) {
+      .reject-btn {
+        white-space: initial;
+      }
+    }
+    
+    .request-list-footer {
+      display: flex;
+      width: 100%;
+      align-items: start;
+      gap: 20px;
+      font-weight: 400;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    
+    @media (max-width: 991px) {
+      .request-list-footer {
+        max-width: 100%;
+      }
+    }
+    
+    .footer-id-row {
+      display: flex;
+      margin-top: 16px;
+      gap: 40px 74px;
+      color: #000;
+      white-space: nowrap;
+    }
+    
+    @media (max-width: 991px) {
+      .footer-id-row {
+        white-space: initial;
+      }
+    }
+    
+    .footer-ellipsis {
+      color: #000;
+    }
+    
+    .footer-actions {
+      align-self: stretch;
+      display: flex;
+      gap: 33px;
+      font-weight: 500;
+      margin: auto 0;
+    }
+    
+    .footer-view-request {
+      color: #ae0f0f;
+      font-weight: 400;
+      flex-grow: 1;
+    }
+    </style>
+    
+    <section class="birth-certificate-management">
+      <header class="header">
+        <nav class="nav-bar">
+          <div class="nav-content">
+            <div class="nav-left">
+              <div class="nav-menu">
+                <div class="nav-title">
+                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/fd6034c1ec22bf4e825bc2150b97f104458d3ebd2d2f8df26a83d2350de63d48?placeholderIfAbsent=true&apiKey=5242dec0675c4156bcb854b4ca03c063" alt="Logo" class="nav-logo" />
+                  <h1 class="nav-heading">Quản lý chung cư</h1>
+                </div>
+                <div class="nav-links">
+                  <a href="#" class="nav-link-active">Quản lý giấy khai sinh</a>
+                  <a href="#" class="nav-link">Quản lý tạm trú</a>
+                </div>
+              </div>
+            </div>
+            <div class="nav-center">
+              <a href="#" class="nav-link-secondary">Quản lý hộ khẩu</a>
+            </div>
+            <div class="nav-right">
+              <div class="user-info">
+                <div class="user-profile">
+                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/71d75e0a1b4075f214b659021d7fd4a2f67de47e2ceb3be8724100991087fbc9?placeholderIfAbsent=true&apiKey=5242dec0675c4156bcb854b4ca03c063" alt="User Avatar" class="user-avatar" />
+                  <div class="user-role">Cán bộ<br />quản lý</div>
+                </div>
+                <div class="user-actions">
+                  <a href="#" class="user-action">Xem thông tin</a>
+                  <a href="#" class="user-action">Xem thêm</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </header>
+    
+      <main class="main-content">
+        <div class="section-title">
+          <h2 class="title-text">Cấp giấy khai sinh</h2>
+          <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/25a9e85308a4b8eec09835feae11a1013941db250016423d88aa3d85a6b5ccd6?placeholderIfAbsent=true&apiKey=5242dec0675c4156bcb854b4ca03c063" alt="Birth Certificate Icon" class="title-icon" />
+        </div>
+        <form class="search-bar">
+          <label for="search-input" class="visually-hidden">Tìm kiếm danh sách đơn đăng kí</label>
+          <input type="text" id="search-input" placeholder="Tìm kiếm danh sách đơn đăng kí ..." aria-label="Tìm kiếm danh sách đơn đăng kí" />
+          <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/76b639b3fdcaedad52749f4b5adc6d8bd10d1324098f64a0b6880223bcfcf551?placeholderIfAbsent=true&apiKey=5242dec0675c4156bcb854b4ca03c063" alt="Search Icon" class="search-icon" />
+        </form>
+        <div class="content-wrapper">
+          <div class="content-inner">
+            <div class="content-columns">
+              <div class="left-column">
+                <div class="table-header">
+                  <div>STT</div>
+                  <div class="header-id">CCCD</div>
+                </div>
+              </div>
+              <div class="right-column">
+                <div class="request-details">
+                  <h3 class="details-header">Xem yêu cầu</h3>
+                  <div class="details-content">
+                    <div class="id-info">
+                      <span class="id-label">CCCD :</span>
+                      <span class="id-value">001200223278</span>
+                    </div>
+                    <div class="personal-info">
+                      <div class="info-column">
+                        <div class="name-info">
+                          <span class="name-label">Họ và tên :</span>
+                          <span class="name-value">Nguyễn Văn A</span>
+                        </div>
+                        <span class="relation-label">Quan hệ với người được khai sinh :</span>
+                      </div>
+                      <span class="relation-value">Cha</span>
+                    </div>
+                    <a href="#" class="view-details">Xem thông tin về nhân khẩu &gt;&gt;</a>
+                    <h4 class="birth-info-header">Khai sinh cho người dưới đây:</h4>
+                    <div class="birth-date">
+                      <span class="birth-date-label">Ngày, tháng, năm sinh:</span>
+                      <span class="birth-date-value">03/11/2022</span>
+                    </div>
+                    <div class="birth-details">
+                      <div class="birth-details-labels">
+                        <span class="birth-place-label">Nơi sinh :</span>
+                        <span class="gender-label">Giới tính :</span>
+                      </div>
+                      <div class="birth-details-values">
+                        <span class="birth-place-value">Yên Nghĩa, Hà Đông, Hà Nội</span>
+                        <div class="gender-nationality">
+                          <span class="gender-value">Nam</span>
+                          <span class="nationality-label">Quốc tịch:</span>
+                          <span class="nationality-value">Việt Nam</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="reason-section">
+                      <span class="reason-label">Lý do:</span>
+                      <span class="reason-value">Gia đình vừa sinh em bé mới</span>
+                    </div>
+                    <div class="note-section">
+                      <span class="note-label">Ghi chú :</span>
+                      <span class="note-value">Không có</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="request-list">
+              <div class="request-list-header">
+                <div class="request-ids">
+                  <div class="request-id-row">
+                    <span>1</span>
+                    <span>001200223278</span>
+                  </div>
+                  <div class="request-id-row">
+                    <span>2</span>
+                    <span>877737264773</span>
+                  </div>
+                  <div class="request-id-row">
+                    <span>3</span>
+                    <span>010200003030</span>
+                  </div>
+                </div>
+                <div class="request-actions">
+                  <div class="action-row">
+                    <button class="view-request">Xem yêu cầu ...</button>
+                    <button class="approve-btn">Duyệt</button>
+                    <button class="reject-btn">Hủy</button>
+                  </div>
+                  <div class="action-row">
+                    <button class="view-request">Xem yêu cầu ...</button>
+                    <button class="approve-btn">Duyệt</button>
+                    <button class="reject-btn">Hủy</button>
+                  </div>
+                  <div class="action-row">
+                    <button class="view-request">Xem yêu cầu ...</button>
+                    <button class="approve-btn">Duyệt</button>
+                    <button class="reject-btn">Hủy</button>
+                  </div>
+                </div>
+              </div>
+              <div class="request-list-footer">
+                <div class="footer-id-row">
+                  <span>4</span>
+                  <span>000293339847</span>
+                </div>
+                <span class="footer-ellipsis">...</span>
+                <div class="footer-actions">
+                  <button class="footer-view-request">Xem yêu cầu ...</button>
+                  <button class="approve-btn">Duyệt</button>
+                  <button class="reject-btn">Hủy</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </section>

@@ -1,0 +1,99 @@
+<style>
+    .number-button { width: 30px; height: 30px; padding: 0 10px; }
+    .active-number { background-color: #d9d9d9; }
+    .inactive-number { background-color: #fff; }
+    .apartment-management { background-color: #fff; display: flex; flex-direction: column; overflow: hidden; }
+    .header-section { background-color: rgba(217, 217, 217, 0.5); display: flex; width: 100%; padding-bottom: 68px; flex-direction: column; }
+    .nav-bar { background-color: #0e8393; display: flex; width: 100%; gap: 40px 100px; flex-wrap: wrap; padding: 8px 41px; }
+    .nav-content { flex-grow: 1; flex-basis: auto; }
+    .nav-layout { gap: 20px; display: flex; }
+    .main-column { display: flex; flex-direction: column; line-height: normal; width: 82%; margin-left: 0; }
+    .title-container { display: flex; width: 100%; flex-direction: column; font-family: Inter, sans-serif; font-weight: 500; }
+    .title-wrapper { align-self: start; display: flex; gap: 24px; font-size: 48px; color: #efefef; flex-wrap: wrap; }
+    .logo { aspect-ratio: 1; object-fit: contain; object-position: center; width: 85px; }
+    .main-title { text-shadow: 5px 5px 40px rgba(0, 0, 0, 0.25); align-self: end; margin-top: 21px; flex-basis: auto; flex-grow: 1; border: 4px solid #640707; }
+    .nav-links { display: flex; margin-top: 12px; gap: 40px 72px; font-size: 24px; color: #fff; flex-wrap: wrap; }
+    .active-link { background-color: #141010; flex-grow: 1; width: fit-content; padding: 10px 24px; border: 1px solid #000; }
+    .inactive-link { flex-grow: 1; width: 129px; margin: auto 0; border: 1px solid #000; }
+    .secondary-column { display: flex; flex-direction: column; line-height: normal; width: 18%; margin-left: 20px; }
+    .view-more { color: #fff; margin-top: 107px; font: 500 24px Inter, sans-serif; border: 1px solid #000; }
+    .collaborator { color: #fff; font: 500 32px Inter, sans-serif; }
+    .main-content { background-color: #f9ecec; box-shadow: 5px 4px 4px rgba(0, 0, 0, 0.25); align-self: end; display: flex; width: 100%; max-width: 1381px; flex-direction: column; font-family: Inter, sans-serif; padding: 36px 35px; }
+    .notification-bar { align-self: end; display: flex; width: 729px; max-width: 100%; gap: 29px; font-size: 24px; flex-wrap: wrap; }
+    .notification-text { background-color: #eee6d1; color: #93082a; font-weight: 500; flex-grow: 1; width: fit-content; margin: auto 0; padding: 4px 14px; }
+    .search-bar { border-radius: 30px; background-color: #a49d9d; display: flex; align-items: start; gap: 40px 100px; color: #070101; font-weight: 400; flex-grow: 1; flex-basis: auto; padding: 10px 5px 10px 13px; }
+    .search-icon { aspect-ratio: 1.07; object-fit: contain; object-position: center; width: 30px; }
+    .content-area { display: flex; margin-top: 10px; width: 100%; max-width: 1165px; flex-direction: column; font-size: 20px; color: #000; font-weight: 500; white-space: nowrap; }
+    .content-box { border-radius: 10px; background-color: #fff; display: flex; height: 587px; }
+    .pagination { align-self: center; display: flex; width: 280px; max-width: 100%; gap: 9px; margin: 47px 0 0 70px; }
+    .pagination-spacer { background-color: #fff; display: flex; width: 30px; height: 30px; }
+    .pagination-arrow { background-color: #fff; align-self: start; width: 30px; height: 30px; padding: 4px 10px 14px; }
+    .pagination-double-arrow { background-color: #fff; width: 30px; height: 30px; }
+    
+    @media (max-width: 991px) {
+      .header-section, .nav-bar, .main-content { max-width: 100%; }
+      .nav-bar { padding: 0 20px; }
+      .nav-layout { flex-direction: column; align-items: stretch; gap: 0; }
+      .main-column, .secondary-column { width: 100%; }
+      .title-container { margin-top: 40px; }
+      .main-title, .nav-links { max-width: 100%; }
+      .active-link { padding: 0 20px; }
+      .view-more { margin-top: 40px; }
+      .main-content { margin-right: 10px; padding: 0 20px; }
+      .notification-text { max-width: 100%; padding-right: 20px; }
+      .content-area { white-space: initial; }
+      .content-box { max-width: 100%; }
+      .pagination { margin-top: 40px; white-space: initial; }
+      .number-button, .pagination-arrow, .pagination-double-arrow { white-space: initial; }
+    }
+    </style>
+    
+    <section class="apartment-management">
+      <header class="header-section">
+        <nav class="nav-bar">
+          <div class="nav-content">
+            <div class="nav-layout">
+              <div class="main-column">
+                <div class="title-container">
+                  <div class="title-wrapper">
+                    <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/fd6034c1ec22bf4e825bc2150b97f104458d3ebd2d2f8df26a83d2350de63d48?placeholderIfAbsent=true&apiKey=5242dec0675c4156bcb854b4ca03c063" class="logo" alt="Apartment Management Logo" />
+                    <h1 class="main-title">Quản lý chung cư</h1>
+                  </div>
+                  <div class="nav-links">
+                    <a href="#" class="active-link">Quản lý thông báo</a>
+                    <a href="#" class="inactive-link">Xem thông tin</a>
+                  </div>
+                </div>
+              </div>
+              <div class="secondary-column">
+                <a href="#" class="view-more">Xem thêm</a>
+              </div>
+            </div>
+          </div>
+          <div class="collaborator">Cộng tác <br /> viên</div>
+        </nav>
+      </header>
+      
+      <main class="main-content">
+        <div class="notification-bar">
+          <div class="notification-text">Thông báo đến các mục đã chọn</div>
+          <form class="search-bar" role="search">
+            <label for="search-input" class="visually-hidden">Tìm kiếm</label>
+            <input type="search" id="search-input" placeholder="Tìm kiếm..." aria-label="Tìm kiếm" />
+            <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/97f12539253725a7ab85002fc4c70648bebdc2e3c49d5ef2bbf6cf0ce88cec50?placeholderIfAbsent=true&apiKey=5242dec0675c4156bcb854b4ca03c063" class="search-icon" alt="Search Icon" />
+          </form>
+        </div>
+        <div class="content-area">
+          <div class="content-box" aria-label="Content Area"></div>
+          <nav class="pagination" aria-label="Pagination">
+            <button class="number-button active-number" aria-current="page">1</button>
+            <button class="number-button inactive-number">2</button>
+            <button class="number-button inactive-number">3</button>
+            <span class="pagination-spacer" aria-hidden="true"></span>
+            <button class="number-button inactive-number">99</button>
+            <button class="pagination-arrow" aria-label="Next Page">&gt;</button>
+            <button class="pagination-double-arrow" aria-label="Last Page">&gt;&gt;</button>
+          </nav>
+        </div>
+      </main>
+    </section>

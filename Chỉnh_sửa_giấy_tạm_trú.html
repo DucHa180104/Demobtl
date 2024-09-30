@@ -1,0 +1,1632 @@
+<style>
+    .edit-temporary-residence {
+      background-color: #fff;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+    
+    .header-background {
+      background-color: rgba(217, 217, 217, 0.5);
+      display: flex;
+      width: 100%;
+      padding-bottom: 11px;
+      flex-direction: column;
+    }
+    
+    @media (max-width: 991px) {
+      .header-background {
+        max-width: 100%;
+      }
+    }
+    
+    .nav-background {
+      background-color: #0e8393;
+      width: 100%;
+      padding: 0 10px 7px 41px;
+    }
+    
+    @media (max-width: 991px) {
+      .nav-background {
+        max-width: 100%;
+        padding-left: 20px;
+      }
+    }
+    
+    .nav-content {
+      gap: 20px;
+      display: flex;
+    }
+    
+    @media (max-width: 991px) {
+      .nav-content {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0px;
+      }
+    }
+    
+    .nav-left {
+      display: flex;
+      flex-direction: column;
+      line-height: normal;
+      width: 65%;
+      margin-left: 0px;
+    }
+    
+    @media (max-width: 991px) {
+      .nav-left {
+        width: 100%;
+      }
+    }
+    
+    .nav-menu {
+      display: flex;
+      margin-top: 9px;
+      width: 100%;
+      flex-direction: column;
+      font-family: Inter, sans-serif;
+      font-weight: 500;
+    }
+    
+    @media (max-width: 991px) {
+      .nav-menu {
+        max-width: 100%;
+        margin-top: 40px;
+      }
+    }
+    
+    .nav-title {
+      align-self: start;
+      display: flex;
+      gap: 24px;
+      font-size: 48px;
+      color: #efefef;
+      flex-wrap: wrap;
+    }
+    
+    @media (max-width: 991px) {
+      .nav-title {
+        font-size: 40px;
+      }
+    }
+    
+    .nav-logo {
+      aspect-ratio: 1;
+      object-fit: contain;
+      object-position: center;
+      width: 85px;
+    }
+    
+    .nav-heading {
+      text-shadow: 5px 5px 40px rgba(0, 0, 0, 0.25);
+      align-self: end;
+      margin-top: 21px;
+      flex-basis: auto;
+      flex-grow: 1;
+      border: 4px solid #640707;
+    }
+    
+    @media (max-width: 991px) {
+      .nav-heading {
+        font-size: 40px;
+      }
+    }
+    
+    .nav-links {
+      align-self: end;
+      display: flex;
+      margin-top: 12px;
+      width: 815px;
+      max-width: 100%;
+      align-items: center;
+      gap: 40px 46px;
+      font-size: 24px;
+      color: #fff;
+    }
+    
+    .nav-link {
+      align-self: stretch;
+      flex-grow: 1;
+      margin: auto 0;
+      border: 1px solid #000;
+    }
+    
+    .nav-link-active {
+      background-color: #141010;
+      align-self: stretch;
+      padding: 10px 47px;
+      border: 1px solid #000;
+    }
+    
+    @media (max-width: 991px) {
+      .nav-link-active {
+        padding: 0 20px;
+      }
+    }
+    
+    .nav-right {
+      display: flex;
+      flex-direction: column;
+      line-height: normal;
+      width: 35%;
+      margin-left: 20px;
+    }
+    
+    @media (max-width: 991px) {
+      .nav-right {
+        width: 100%;
+      }
+    }
+    
+    .user-info {
+      display: flex;
+      width: 100%;
+      flex-direction: column;
+    }
+    
+    @media (max-width: 991px) {
+      .user-info {
+        max-width: 100%;
+        margin-top: 40px;
+      }
+    }
+    
+    .user-profile {
+      align-self: end;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    
+    .user-avatar {
+      aspect-ratio: 1.1;
+      object-fit: contain;
+      object-position: center;
+      width: 55px;
+      align-self: stretch;
+      margin: auto 0;
+    }
+    
+    .user-icons {
+      align-self: stretch;
+      display: flex;
+      gap: 6px;
+    }
+    
+    .icon-1 {
+      aspect-ratio: 0.76;
+      object-fit: contain;
+      object-position: center;
+      width: 32px;
+      margin: auto 0;
+    }
+    
+    .icon-2 {
+      aspect-ratio: 0.92;
+      object-fit: contain;
+      object-position: center;
+      width: 88px;
+    }
+    
+    .user-role {
+      color: #fff;
+      margin: auto 0;
+      font: 500 32px Inter, sans-serif;
+    }
+    
+    .user-actions {
+      display: flex;
+      margin-top: 18px;
+      width: 367px;
+      max-width: 100%;
+      gap: 20px;
+      color: #fff;
+      justify-content: space-between;
+      font: 500 24px Inter, sans-serif;
+    }
+    
+    .action-link {
+      border: 1px solid #000;
+    }
+    
+    .main-content {
+      background-color: #f9ecec;
+      box-shadow: 5px 4px 4px rgba(0, 0, 0, 0.25);
+      align-self: center;
+      display: flex;
+      margin-top: 19px;
+      width: 100%;
+      max-width: 1381px;
+      flex-direction: column;
+      padding: 154px 47px 27px 11px;
+    }
+    
+    @media (max-width: 991px) {
+      .main-content {
+        max-width: 100%;
+        padding: 100px 20px 0 0;
+      }
+    }
+    
+    .content-wrapper {
+      display: flex;
+      margin-left: 23px;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    
+    .checkbox-group {
+      align-self: start;
+      display: flex;
+      margin-top: 27px;
+      flex-direction: column;
+    }
+    
+    .checkbox {
+      background-color: #fffcfc;
+      display: flex;
+      width: 24px;
+      height: 24px;
+    }
+    
+    .checkbox-2 {
+      background-color: #fffcfc;
+      display: flex;
+      margin-top: 27px;
+      width: 24px;
+      height: 24px;
+    }
+    
+    .checkbox-3 {
+      background-color: #fffcfc;
+      display: flex;
+      margin-top: 28px;
+      width: 24px;
+      height: 24px;
+    }
+    
+    .checkbox-4 {
+      background-color: #fffcfc;
+      display: flex;
+      margin-top: 26px;
+      width: 24px;
+      height: 24px;
+    }
+    
+    .content-container {
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      flex-basis: 0;
+      width: fit-content;
+      font: 24px Inter, sans-serif;
+    }
+    
+    @media (max-width: 991px) {
+      .content-container {
+        max-width: 100%;
+      }
+    }
+    
+    .content-box {
+      border-radius: 10px;
+      background-color: #fff;
+      display: flex;
+      width: 1253px;
+      max-width: 100%;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      padding: 2px 63px;
+    }
+    
+    @media (max-width: 991px) {
+      .content-box {
+        padding: 0 20px;
+      }
+    }
+    
+    .content-numbers {
+      align-self: stretch;
+      display: flex;
+      flex-direction: column;
+      color: #000;
+      font-weight: 400;
+      white-space: nowrap;
+      margin: auto 0;
+    }
+    
+    @media (max-width: 991px) {
+      .content-numbers {
+        display: none;
+        white-space: initial;
+      }
+    }
+    
+    .content-divider {
+      align-self: start;
+      width: 1px;
+      height: 224px;
+      border: 1px solid #000;
+    }
+    
+    .content-details {
+      align-self: stretch;
+      display: flex;
+      flex-direction: column;
+      margin: auto 0;
+    }
+    
+    @media (max-width: 991px) {
+      .content-details {
+        max-width: 100%;
+      }
+    }
+    
+    .details-row {
+      display: flex;
+      gap: 40px 50px;
+      font-weight: 400;
+    }
+    
+    @media (max-width: 991px) {
+      .details-row {
+        max-width: 100%;
+      }
+    }
+    
+    .detail-id {
+      color: #000;
+      align-self: start;
+      flex-grow: 1;
+    }
+    
+    .detail-date {
+      color: #000;
+      align-self: start;
+      flex-grow: 1;
+      width: 192px;
+    }
+    
+    .detail-link {
+      color: #ae0f0f;
+      align-self: end;
+      margin-top: 105px;
+      flex-grow: 1;
+      width: 141px;
+    }
+    
+    @media (max-width: 991px) {
+      .detail-link {
+        margin-top: 40px;
+      }
+    }
+    
+    .action-buttons {
+      display: flex;
+      flex-direction: column;
+      color: #089326;
+      font-weight: 500;
+    }
+    
+    .action-button {
+      background-color: #cef3ff;
+      padding: 4px 10px;
+    }
+    
+    .action-button-2 {
+      background-color: #cef3ff;
+      margin-top: 14px;
+      padding: 4px 10px;
+    }
+    
+    .action-button-3 {
+      background-color: #cef3ff;
+      margin-top: 11px;
+      padding: 4px 10px;
+    }
+    
+    @media (max-width: 991px) {
+      .action-button-3 {
+        margin-right: 3px;
+      }
+    }
+    
+    .delete-buttons {
+      display: flex;
+      flex-direction: column;
+      color: #930829;
+      font-weight: 500;
+      white-space: nowrap;
+    }
+    
+    @media (max-width: 991px) {
+      .delete-buttons {
+        white-space: initial;
+      }
+    }
+    
+    .delete-button {
+      background-color: #eee6d1;
+      padding: 4px 10px;
+    }
+    
+    @media (max-width: 991px) {
+      .delete-button {
+        white-space: initial;
+      }
+    }
+    
+    .delete-button-2 {
+      background-color: #eee6d1;
+      margin-top: 14px;
+      padding: 4px 10px;
+    }
+    
+    @media (max-width: 991px) {
+      .delete-button-2 {
+        white-space: initial;
+      }
+    }
+    
+    .delete-button-3 {
+      background-color: #eee6d1;
+      margin-top: 11px;
+      padding: 4px 10px;
+    }
+    
+    @media (max-width: 991px) {
+      .delete-button-3 {
+        white-space: initial;
+      }
+    }
+    
+    .details-row-2 {
+      display: flex;
+      margin-top: 9px;
+      width: 100%;
+      align-items: start;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    
+    @media (max-width: 991px) {
+      .details-row-2 {
+        max-width: 100%;
+      }
+    }
+    
+    .detail-id-2 {
+      color: #000;
+      font-weight: 400;
+      margin-top: 18px;
+    }
+    
+    .action-group {
+      display: flex;
+      align-items: start;
+      gap: 40px 53px;
+      font-weight: 500;
+    }
+    
+    .action-button-4 {
+      background-color: #cef3ff;
+      color: #089326;
+      padding: 4px 10px;
+    }
+    
+    .delete-button-4 {
+      background-color: #eee6d1;
+      margin-top: 4px;
+      color: #930829;
+      white-space: nowrap;
+      padding: 4px 10px;
+    }
+    
+    @media (max-width: 991px) {
+      .delete-button-4 {
+        white-space: initial;
+      }
+    }
+    
+    .content-actions {
+      display: flex;
+      margin-top: 67px;
+      width: 100%;
+      align-items: start;
+      gap: 20px;
+      justify-content: space-between;
+    }
+    
+    @media (max-width: 991px) {
+      .content-actions {
+        max-width: 100%;
+        margin-top: 40px;
+      }
+    }
+    
+    .new-residence-button {
+      background-color: #930e6e;
+      color: #0b0101;
+      font-weight: 500;
+      padding: 12px 17px;
+      border: 1px solid #000;
+    }
+    
+    .search-bar {
+      border-radius: 30px;
+      background-color: #a49d9d;
+      display: flex;
+      margin-top: 7px;
+      align-items: start;
+      gap: 40px 100px;
+      color: #070101;
+      font-weight: 400;
+      padding: 10px 5px 10px 13px;
+    }
+    
+    .search-icon {
+      aspect-ratio: 1.07;
+      object-fit: contain;
+      object-position: center;
+      width: 30px;
+    }
+    
+    .edit-section {
+      z-index: 10;
+      display: flex;
+      margin-top: -522px;
+      width: 100%;
+      color: #000;
+      font: 24px Inter, sans-serif;
+    }
+    
+    @media (max-width: 991px) {
+      .edit-section {
+        max-width: 100%;
+        margin-top: -200px;
+      }
+    }
+    
+    .edit-container {
+      align-self: end;
+      display: flex;
+      width: 100%;
+      flex-direction: column;
+      font-weight: 400;
+      margin: 32px -1073px 0 0;
+    }
+    
+    @media (max-width: 991px) {
+      .edit-container {
+        max-width: 100%;
+      }
+    }
+    
+    .edit-button {
+      background-color: #930e6e;
+      display: flex;
+      margin-left: 70px;
+      width: 279px;
+      max-width: 100%;
+      height: 53px;
+      border: 1px solid #000;
+    }
+    
+    @media (max-width: 991px) {
+      .edit-button {
+        margin-left: 10px;
+      }
+    }
+    
+    .edit-header {
+      border-radius: 10px;
+      background-color: #a4f3ba;
+      display: flex;
+      margin-top: 21px;
+      width: 100%;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      padding: 14px 23px;
+    }
+    
+    @media (max-width: 991px) {
+      .edit-header {
+        max-width: 100%;
+        padding: 0 20px;
+      }
+    }
+    
+    .header-left {
+      align-self: start;
+      display: flex;
+      gap: 40px 59px;
+      white-space: nowrap;
+    }
+    
+    @media (max-width: 991px) {
+      .header-left {
+        white-space: initial;
+      }
+    }
+    
+    .header-checkbox {
+      background-color: #fffcfc;
+      align-self: start;
+      display: flex;
+      margin-top: 4px;
+      width: 24px;
+      height: 24px;
+    }
+    
+    .header-text {
+      /* No specific styles */
+    }
+    
+    @media (max-width: 991px) {
+      .header-text {
+        max-width: 100%;
+      }
+    }
+    
+    .edit-form {
+      border-radius: 20px;
+      background-color: #fff;
+      display: flex;
+      padding-bottom: 39px;
+      flex-direction: column;
+    }
+    
+    @media (max-width: 991px) {
+      .edit-form {
+        max-width: 100%;
+      }
+    }
+    
+    .form-header {
+      border-radius: 20px 20px 0px 0px;
+      background-color: #a4f3ba;
+      z-index: 10;
+      display: flex;
+      margin-top: -5px;
+      gap: 20px;
+      font-size: 32px;
+      font-weight: 400;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      padding: 19px 23px 12px 11px;
+    }
+    
+    @media (max-width: 991px) {
+      .form-header {
+        max-width: 100%;
+        padding-right: 20px;
+      }
+    }
+    
+    .header-icon {
+      aspect-ratio: 1.21;
+      object-fit: contain;
+      object-position: center;
+      width: 34px;
+      align-self: start;
+    }
+    
+    .delete-selected {
+      background-color: #eee6d1;
+      align-self: end;
+      color: #930829;
+      font-weight: 500;
+      margin: -14px 105px 0 0;
+      padding: 4px 18px;
+    }
+    
+    @media (max-width: 991px) {
+      .delete-selected {
+        margin-right: 10px;
+      }
+    }
+    
+    .form-content {
+      display: flex;
+      margin-top: 4px;
+      width: 100%;
+      flex-direction: column;
+      align-items: start;
+      padding: 0 33px;
+    }
+    
+    @media (max-width: 991px) {
+      .form-content {
+        max-width: 100%;
+        padding: 0 20px;
+      }
+    }
+    
+    .form-row {
+      display: flex;
+      gap: 29px;
+      font-weight: 600;
+    }
+    
+    .form-label {
+      align-self: start;
+      flex-grow: 1;
+    }
+    
+    .form-input {
+      background-color: #eae5e5;
+      display: flex;
+      width: 280px;
+      max-width: 100%;
+      height: 44px;
+    }
+    
+    .form-row-2 {
+      display: flex;
+      margin-top: 24px;
+      width: 726px;
+      max-width: 100%;
+      gap: 14px;
+    }
+    
+    .form-label-2 {
+      font-weight: 600;
+      flex-grow: 1;
+      margin: auto 0;
+    }
+    
+    .form-select {
+      background-color: #eae5e5;
+      display: flex;
+      align-items: start;
+      gap: 23px;
+      font-weight: 400;
+      white-space: nowrap;
+      padding: 6px 16px;
+    }
+    
+    @media (max-width: 991px) {
+      .form-select {
+        white-space: initial;
+      }
+    }
+    
+    .select-text {
+      flex-basis: auto;
+    }
+    
+    .select-icon {
+      aspect-ratio: 0.83;
+      object-fit: contain;
+      object-position: center;
+      width: 25px;
+    }
+    
+    .form-row-3 {
+      align-self: start;
+      display: flex;
+      gap: 7px;
+    }
+    
+    .form-label-3 {
+      font-weight: 600;
+      flex-grow: 1;
+    }
+    
+    .form-select-2 {
+      background-color: #eae5e5;
+      display: flex;
+      align-items: start;
+      gap: 9px;
+      font-weight: 400;
+      white-space: nowrap;
+      padding: 0 7px 6px 15px;
+    }
+    
+    @media (max-width: 991px) {
+      .form-select-2 {
+        white-space: initial;
+      }
+    }
+    
+    .select-text-2 {
+      z-index: 10;
+    }
+    
+    .select-icon-2 {
+      aspect-ratio: 0.55;
+      object-fit: contain;
+      object-position: center;
+      width: 22px;
+      border-radius: 50%;
+      margin-top: -5px;
+    }
+    
+    .form-row-4 {
+      display: flex;
+      margin-top: 31px;
+      gap: 19px;
+      flex-wrap: wrap;
+    }
+    
+    .form-label-4 {
+      font-weight: 600;
+      flex-grow: 1;
+      flex-basis: auto;
+      margin: auto 0;
+    }
+    
+    .form-input-2 {
+      background-color: #eae5e5;
+      font-weight: 400;
+      white-space: nowrap;
+      flex-grow: 1;
+      width: fit-content;
+      padding: 4px 42px;
+    }
+    
+    @media (max-width: 991px) {
+      .form-input-2 {
+        white-space: initial;
+        padding: 0 20px;
+      }
+    }
+    
+    .form-row-5 {
+      display: flex;
+      margin-top: 27px;
+      gap: 40px 49px;
+      flex-wrap: wrap;
+    }
+    
+    .form-label-5 {
+      font-weight: 600;
+      align-self: start;
+      flex-grow: 1;
+    }
+    
+    .form-input-3 {
+      background-color: #eae5e5;
+      font-weight: 400;
+      white-space: nowrap;
+      padding: 10px 38px 16px;
+    }
+    
+    @media (max-width: 991px) {
+      .form-input-3 {
+        white-space: initial;
+        padding: 0 20px;
+      }
+    }
+    
+    .form-input-4 {
+      background-color: #eae5e5;
+      align-self: end;
+      margin-top: 17px;
+      width: 576px;
+      max-width: 100%;
+      font-weight: 400;
+      padding: 5px 31px 14px;
+    }
+    
+    @media (max-width: 991px) {
+      .form-input-4 {
+        padding: 0 20px;
+      }
+    }
+    
+    .form-row-6 {
+      display: flex;
+      width: 100%;
+      flex-direction: column;
+      align-items: end;
+      padding: 0 33px;
+    }
+    
+    @media (max-width: 991px) {
+      .form-row-6 {
+        max-width: 100%;
+        padding: 0 20px;
+      }
+    }
+    
+    .form-row-7 {
+      align-self: stretch;
+      display: flex;
+      gap: 27px;
+      font-weight: 600;
+      flex-wrap: wrap;
+    }
+    
+    .form-label-6 {
+      flex-grow: 1;
+      margin: auto 0;
+    }
+    
+    .form-input-5 {
+      background-color: #eae5e5;
+      display: flex;
+      width: 621px;
+      max-width: 100%;
+      height: 58px;
+    }
+    
+    .form-input-6 {
+      background-color: #eae5e5;
+      margin-top: 19px;
+      width: 597px;
+      max-width: 100%;
+      font-weight: 400;
+      padding: 10px 19px;
+    }
+    
+    @media (max-width: 991px) {
+      .form-input-6 {
+        padding-right: 20px;
+      }
+    }
+    
+    .form-button {
+      background-color: #c73535;
+      display: flex;
+      margin-top: 88px;
+      width: 138px;
+      height: 50px;
+    }
+    
+    @media (max-width: 991px) {
+      .form-button {
+        margin: 40px 10px 0 0;
+      }
+    }
+    
+    .search-bar-2 {
+      border-radius: 30px;
+      background-color: #a49d9d;
+      align-self: start;
+      display: flex;
+      margin-top: 47px;
+      align-items: start;
+      gap: 40px 100px;
+      color: #070101;
+      font-weight: 400;
+      padding: 10px 5px 10px 13px;
+    }
+    
+    @media (max-width: 991px) {
+      .search-bar-2 {
+        margin-top: 40px;
+      }
+    }
+    
+    .search-icon-2 {
+      aspect-ratio: 1.07;
+      object-fit: contain;
+      object-position: center;
+      width: 30px;
+    }
+    
+    .table-header {
+      border-radius: 10px;
+      background-color: #a4f3ba;
+      display: flex;
+      margin-top: 367px;
+      gap: 40px 100px;
+      color: #000;
+      padding: 14px 33px;
+      font: 400 24px Inter, sans-serif;
+    }
+    
+    @media (max-width: 991px) {
+      .table-header {
+        max-width: 100%;
+        margin-top: 40px;
+        padding: 0 20px;
+      }
+    }
+    
+    .header-cell {
+      flex-grow: 1;
+      width: 185px;
+    }
+    
+    .header-cell-2 {
+      flex-grow: 1;
+      width: 569px;
+    }
+    
+    @media (max-width: 991px) {
+      .header-cell-2 {
+        max-width: 100%;
+      }
+    }
+    
+    .table-body {
+      border-radius: 10px;
+      background-color: #fff;
+      margin-top: 7px;
+      padding: 16px 37px 0;
+    }
+    
+    @media (max-width: 991px) {
+      .table-body {
+        max-width: 100%;
+        padding: 0 20px;
+      }
+    }
+    
+    .table-row {
+      gap: 20px;
+      display: flex;
+    }
+    
+    @media (max-width: 991px) {
+      .table-row {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0px;
+      }
+    }
+    
+    .row-left {
+      display: flex;
+      flex-direction: column;
+      line-height: normal;
+      width: 61%;
+      margin-left: 0px;
+    }
+    
+    @media (max-width: 991px) {
+      .row-left {
+        width: 100%;
+      }
+    }
+    
+    .row-content {
+      display: flex;
+      align-items: start;
+      gap: 40px 81px;
+      color: #000;
+      flex-wrap: wrap;
+      font: 400 24px Inter, sans-serif;
+    }
+    
+    @media (max-width: 991px) {
+      .row-content {
+        max-width: 100%;
+        margin-top: 40px;
+      }
+    }
+    
+    .content-column {
+      display: flex;
+      margin-top: 8px;
+      flex-direction: column;
+      white-space: nowrap;
+    }
+    
+    @media (max-width: 991px) {
+      .content-column {
+        white-space: initial;
+      }
+    }
+    
+    .content-column-2 {
+      display: flex;
+      margin-top: 8px;
+      flex-direction: column;
+      white-space: nowrap;
+    }
+    
+    @media (max-width: 991px) {
+      .content-column-2 {
+        white-space: initial;
+      }
+    }
+    
+    .content-item {
+      /* No specific styles */
+    }
+    
+    @media (max-width: 991px) {
+      .content-item {
+        margin-right: 4px;
+      }
+    }
+    
+    .content-item-2 {
+      margin-top: 23px;
+    }
+    
+    @media (max-width: 991px) {
+      .content-item-2 {
+        margin-right: 3px;
+      }
+    }
+    
+    .content-item-3 {
+      margin-top: 23px;
+    }
+    
+    .content-column-3 {
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .content-row {
+      display: flex;
+      gap: 40px 42px;
+    }
+    
+    .content-cell {
+      flex-grow: 1;
+      width: 201px;
+    }
+    
+    .content-row-2 {
+      display: flex;
+      margin-top: 11px;
+      gap: 40px 43px;
+    }
+    
+    .content-cell-2 {
+      flex-grow: 1;
+      width: 200px;
+    }
+    
+    .content-row-3 {
+      display: flex;
+      margin-top: 14px;
+      gap: 40px 42px;
+    }
+    
+    .content-cell-3 {
+      flex-grow: 1;
+      width: 201px;
+    }
+    
+    .row-right {
+      display: flex;
+      flex-direction: column;
+      line-height: normal;
+      width: 39%;
+      margin-left: 20px;
+    }
+    
+    @media (max-width: 991px) {
+      .row-right {
+        width: 100%;
+      }
+    }
+    
+    .right-content {
+      display: flex;
+      gap: 33px;
+      font: 24px Inter, sans-serif;
+    }
+    
+    @media (max-width: 991px) {
+      .right-content {
+        margin-top: 40px;
+      }
+    }
+    
+    .content-links {
+      display: flex;
+      flex-direction: column;
+      color: #ae0f0f;
+      font-weight: 400;
+    }
+    .content-link {
+      align-self: center;
+      margin-top: 20px;
+    }
+    
+    .action-group-2 {
+      align-self: start;
+      display: flex;
+      flex-direction: column;
+      font-weight: 500;
+      white-space: nowrap;
+    }
+    
+    @media (max-width: 991px) {
+      .action-group-2 {
+        white-space: initial;
+      }
+    }
+    
+    .action-row {
+      display: flex;
+      gap: 20px;
+      justify-content: space-between;
+    }
+    
+    @media (max-width: 991px) {
+      .action-row {
+        white-space: initial;
+      }
+    }
+    
+    .approve-button {
+      background-color: #cef3ff;
+      color: #089326;
+      padding: 4px 10px;
+    }
+    
+    @media (max-width: 991px) {
+      .approve-button {
+        white-space: initial;
+      }
+    }
+    
+    .cancel-button {
+      background-color: #eee6d1;
+      color: #930829;
+      padding: 4px 10px;
+    }
+    
+    @media (max-width: 991px) {
+      .cancel-button {
+        white-space: initial;
+      }
+    }
+    
+    .action-row-2 {
+      display: flex;
+      margin-top: 11px;
+      align-items: start;
+      gap: 20px;
+      justify-content: space-between;
+    }
+    
+    @media (max-width: 991px) {
+      .action-row-2 {
+        white-space: initial;
+      }
+    }
+    
+    .action-row-3 {
+      display: flex;
+      margin-top: 11px;
+      align-items: start;
+      gap: 20px;
+      justify-content: space-between;
+    }
+    
+    @media (max-width: 991px) {
+      .action-row-3 {
+        white-space: initial;
+      }
+    }
+    
+    .pagination {
+      align-self: center;
+      display: flex;
+      margin-top: 19px;
+      width: 280px;
+      max-width: 100%;
+      gap: 9px;
+      color: #000;
+      white-space: nowrap;
+      font: 500 20px Inter, sans-serif;
+    }
+    
+    @media (max-width: 991px) {
+      .pagination {
+        white-space: initial;
+      }
+    }
+    
+    .page-number {
+      background-color: #d9d9d9;
+      width: 30px;
+      height: 30px;
+      padding: 0 10px;
+    }
+    
+    @media (max-width: 991px) {
+      .page-number {
+        white-space: initial;
+      }
+    }
+    
+    .page-number-2 {
+      background-color: #fff;
+      width: 30px;
+      height: 30px;
+      padding: 0 8px;
+    }
+    
+    @media (max-width: 991px) {
+      .page-number-2 {
+        white-space: initial;
+      }
+    }
+    
+    .page-number-3 {
+      background-color: #fff;
+      width: 30px;
+      height: 30px;
+      padding: 0 10px;
+    }
+    
+    @media (max-width: 991px) {
+      .page-number-3 {
+        white-space: initial;
+      }
+    }
+    
+    .page-ellipsis {
+      background-color: #fff;
+      width: 30px;
+      height: 30px;
+      padding: 0 7px;
+    }
+    
+    @media (max-width: 991px) {
+      .page-ellipsis {
+        white-space: initial;
+      }
+    }
+    
+    .page-next {
+      background-color: #fff;
+      align-self: start;
+      width: 30px;
+      height: 30px;
+      padding: 4px 10px 14px;
+    }
+    
+    @media (max-width: 991px) {
+      .page-next {
+        white-space: initial;
+      }
+    }
+    
+    .page-last {
+      background-color: #fff;
+      width: 30px;
+      height: 30px;
+    }
+    
+    @media (max-width: 991px) {
+      .page-last {
+        white-space: initial;
+      }
+    }
+    </style>
+    
+    <section class="edit-temporary-residence">
+      <header class="header-background">
+        <nav class="nav-background">
+          <div class="nav-content">
+            <div class="nav-left">
+              <div class="nav-menu">
+                <div class="nav-title">
+                  <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/fd6034c1ec22bf4e825bc2150b97f104458d3ebd2d2f8df26a83d2350de63d48?placeholderIfAbsent=true&apiKey=5242dec0675c4156bcb854b4ca03c063" class="nav-logo" alt="Logo" />
+                  <h1 class="nav-heading">Quản lý chung cư</h1>
+                </div>
+                <div class="nav-links">
+                  <a href="#" class="nav-link">Quản lý giấy khai sinh</a>
+                  <a href="#" class="nav-link-active">Quản lý tạm trú</a>
+                  <a href="#" class="nav-link">Quản lý hộ khẩu</a>
+                </div>
+              </div>
+            </div>
+            <div class="nav-right">
+              <div class="user-info">
+                <div class="user-profile">
+                  <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/acd60ab626b936fc4ca24a2d2e0eef65c8a2468c7b37b1cf1b0b572a3fa77346?placeholderIfAbsent=true&apiKey=5242dec0675c4156bcb854b4ca03c063" class="user-avatar" alt="User avatar" />
+                  <div class="user-icons">
+                    <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/5b5de1c91f63ee7da2382cf35201d9fc8de3710dfd04e012c709ebca078147ef?placeholderIfAbsent=true&apiKey=5242dec0675c4156bcb854b4ca03c063" class="icon-1" alt="Icon 1" />
+                    <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/1a7c37d3b52a350dd9bc7563a0bd0ed0a4e09c3adfd9396b61030987cdb97404?placeholderIfAbsent=true&apiKey=5242dec0675c4156bcb854b4ca03c063" class="icon-2" alt="Icon 2" />
+                  </div>
+                  <div class="user-role">Cán bộ quản lý</div>
+                </div>
+                <div class="user-actions">
+                  <a href="#" class="action-link">Xem thông tin</a>
+                  <a href="#" class="action-link">Xem thêm</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </header>
+    
+      <main class="main-content">
+        <div class="content-wrapper">
+          <div class="checkbox-group">
+            <div class="checkbox"></div>
+            <div class="checkbox-2"></div>
+            <div class="checkbox-3"></div>
+            <div class="checkbox-4"></div>
+          </div>
+          <div class="content-container">
+            <div class="content-box">
+              <div class="content-numbers">
+                <div>1</div>
+                <div>2</div>
+                <div>3</div>
+                <div>4</div>
+              </div>
+              <div class="content-divider"></div>
+              <div class="content-details">
+                <div class="details-row">
+                  <div class="detail-id">001200223278</div>
+                  <div class="detail-date">13:00 02/02/2022</div>
+                  <a href="#" class="detail-link">Xem chi tiết...</a>
+                  <div class="action-buttons">
+                    <button class="action-button">Chỉnh sửa</button>
+                    <button class="action-button-2">Chỉnh sửa</button>
+                    <button class="action-button-3">Chỉnh sửa</button>
+                  </div>
+                  <div class="delete-buttons">
+                    <button class="delete-button">Xóa</button>
+                    <button class="delete-button-2">Xóa</button>
+                    <button class="delete-button-3">Xóa</button>
+                  </div>
+                </div>
+                <div class="details-row-2">
+                  <div class="detail-id-2">000293339847</div>
+                  <div class="action-group">
+                    <button class="action-button-4">Chỉnh sửa</button>
+                    <button class="delete-button-4">Xóa</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="content-actions">
+              <button class="new-residence-button">Cấp mới giấy tạm trú</button>
+              <div class="search-bar">
+                <label for="search-input" class="visually-hidden">Tìm kiếm...</label>
+                <input type="text" id="search-input" placeholder="Tìm kiếm..." />
+                <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/97f12539253725a7ab85002fc4c70648bebdc2e3c49d5ef2bbf6cf0ce88cec50?placeholderIfAbsent=true&apiKey=5242dec0675c4156bcb854b4ca03c063" class="search-icon" alt="Search icon" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    
+      <section class="edit-section">
+        <div class="edit-container">
+          <button class="edit-button" aria-label="Edit"></button>
+          <div class="edit-header">
+            <div class="header-left">
+              <div class="header-checkbox"></div>
+              <div>STT</div>
+            </div>
+            <div class="header-text">Thời gian cấp</div>
+          </div>
+        </div>
+        <form class="edit-form">
+          <div class="form-header">
+            <div>
+              <span>Chỉnh sửa giấy tạm trú</span>
+              <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/d2210858052e5f527a3716215e9df350a0441176569a98f9608fcddb97fa592f?placeholderIfAbsent=true&apiKey=5242dec0675c4156bcb854b4ca03c063" class="header-icon" alt="Edit icon" />
+            </div>
+            <button type="button" class="delete-selected">Xóa mục đã chọn</button>
+          </div>
+          <div class="form-content">
+            <div class="form-row">
+              <label for="fullName" class="form-label">Họ và tên :</label>
+              <input type="text" id="fullName" class="form-input" />
+            </div>
+            <div class="form-row-2">
+              <label for="birthDate" class="form-label-2">Ngày, tháng, năm sinh:</label>
+              <div class="form-select">
+                <span class="select-text">03/12/1977</span>
+                <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/e6416a255ae42acd04c1be635afc3f40c226d280a1c830fd8bbb6c581cb19a09?placeholderIfAbsent=true&apiKey=5242dec0675c4156bcb854b4ca03c063" class="select-icon" alt="Calendar icon" />
+              </div>
+              <div class="form-row-3">
+                <label for="gender" class="form-label-3">Giới tính :</label>
+                <div class="form-select-2">
+                  <span class="select-text-2">Nam</span>
+                  <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/6ab3daf2ea405fb4af4ffd0cef01e46b11d59564a1ab5ad332b00de9bd5488a0?placeholderIfAbsent=true&apiKey=5242dec0675c4156bcb854b4ca03c063" class="select-icon-2" alt="Dropdown icon" />
+                </div>
+              </div>
+            </div>
+            <div class="form-row-4">
+              <label for="idNumber" class="form-label-4">Số định danh cá nhân / CCCD :</label>
+              <input type="text" id="idNumber" class="form-input-2" value="001200223278" />
+            </div>
+            <div class="form-row-5">
+              <label for="phoneNumber" class="form-label-5">Số điện thoại liên hệ :</label>
+              <input type="tel" id="phoneNumber" class="form-input-3" value="0366181683" />
+            </div>
+            <input type="text" class="form-input-4" value="Yên Nghĩa, Hà Đông, Hà Nội" />
+          </div>
+          <div class="form-row-6">
+            <div class="form-row-7">
+              <label for="temporaryAddress" class="form-label-6">Nơi tạm trú :</label>
+              <input type="text" id="temporaryAddress" class="form-input-5" />
+            </div>
+            <input type="text" class="form-input-6" value="Yên Nghĩa, Hà Đông, Hà Nội" />
+            <button type="submit" class="form-button" aria-label="Submit form"></button>
+          </div>
+        </form>
+        <div class="search-bar-2">
+          <label for="search-input-2" class="visually-hidden">Tìm kiếm...</label>
+          <input type="text" id="search-input-2" placeholder="Tìm kiếm..." />
+          <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/97f12539253725a7ab85002fc4c70648bebdc2e3c49d5ef2bbf6cf0ce88cec50?placeholderIfAbsent=true&apiKey=5242dec0675c4156bcb854b4ca03c063" class="search-icon-2" alt="Search icon" />
+        </div>
+      </section>
+    
+      <section class="table-section">
+        <div class="table-header">
+          <div>STT</div>
+          <div>CCCD</div>
+          <div class="header-cell">Thời gian đăng kí</div>
+          <div class="header-cell-2">Lý do</div>
+        </div>
+        <div class="table-body">
+          <div class="table-row">
+            <div class="row-left">
+              <div class="row-content">
+                <div class="content-column">
+                  <div>1</div>
+                  <div>2</div>
+                  <div>3</div>
+                </div>
+                <div class="content-column-2">
+                  <div class="content-item">001200223278</div>
+                  <div class="content-item-2">877737264773</div>
+                  <div class="content-item-3">010200003030</div>
+                </div>
+                <div class="content-column-3">
+                  <div class="content-row">
+                    <div class="content-cell">13:00 02/02/2022</div>
+                    <div>...</div>
+                  </div>
+                  <div class="content-row-2">
+                    <div class="content-cell-2">15:00 02/02/2022</div>
+                    <div>...</div>
+                  </div>
+                  <div class="content-row-3">
+                    <div class="content-cell-3">19:00 02/02/2022</div>
+                    <div>...</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row-right">
+              <div class="right-content">
+                <div class="content-links">
+                  <a href="#" class="content-link">Xem yêu cầu ...</a>
+                  <a href="#" class="content-link">Xem yêu cầu ...</a>
+                </div>
+                <div class="action-group-2">
+                  <div class="action-row">
+                    <button class="approve-button">Duyệt</button>
+                    <button class="cancel-button">Hủy</button>
+                  </div>
+                  <div class="action-row-2">
+                    <button class="approve-button">Duyệt</button>
+                    <button class="cancel-button">Hủy</button>
+                  </div>
+                  <div class="action-row-3">
+                    <button class="approve-button">Duyệt</button>
+                    <button class="cancel-button">Hủy</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    
+      <nav class="pagination" aria-label="Page navigation">
+        <button class="page-number" aria-current="page">1</button>
+        <button class="page-number-2">2</button>
+        <button class="page-number-3">3</button>
+        <span class="page-ellipsis">...</span>
+        <button class="page-number">99</button>
+        <button class="page-next" aria-label="Next page">&gt;</button>
+        <button class="page-last" aria-label="Last page">&gt;&gt;</button>
+      </nav>
+    </section>
